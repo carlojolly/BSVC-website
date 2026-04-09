@@ -83,7 +83,7 @@ export function CTA() {
           >
             {/* button fill on hover */}
             <span className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="relative">Apply now!</span>
+            <span className="relative font-semibold">Apply now!</span>
           </a>
         </motion.div>
       </div>
