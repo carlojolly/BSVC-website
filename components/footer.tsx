@@ -89,7 +89,7 @@ export function Footer() {
             width={70}
             height={0}
             sizes="70px"
-            className="h-auto opacity-50 flex-shrink-0"
+            className="h-auto flex-shrink-0 opacity-[0.78]"
           />
         </motion.div>
 
