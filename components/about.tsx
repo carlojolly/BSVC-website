@@ -21,7 +21,7 @@ function AnimatedCounter({ target, suffix = "", inView }: { target: number; suff
 
 const stats = [
   { value: 60, suffix: "+", label: "Members" },
-  { value: 3, suffix: "", label: "Pillars" },
+  { value: 4, suffix: "", label: "Divisions" },
   { value: 100, suffix: "%", label: "Student-led" },
 ];
 
