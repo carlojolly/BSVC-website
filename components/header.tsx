@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Logo } from "./logo";
 import { MobileMenu } from "./mobile-menu";
+import { Text_03 } from "./ui/wave-text";
 
 const NAV_ITEMS = ["About us", "Activities", "Alumni", "Articles"];
 
@@ -47,13 +48,13 @@ export const Header = () => {
                 <Link
                   key={item}
                   href={`#${item.toLowerCase().replace(" ", "-")}`}
-                  className={`uppercase inline-block font-mono text-sm whitespace-nowrap transition-colors duration-150 ease-out ${
+                  className={`uppercase font-mono text-sm whitespace-nowrap transition-colors duration-150 ease-out ${
                     scrolled
                       ? "text-white/70 hover:text-white"
                       : "text-foreground/60 hover:text-foreground"
                   }`}
                 >
-                  {item}
+                  <Text_03 text={item} />
                 </Link>
               ))}
             </nav>
