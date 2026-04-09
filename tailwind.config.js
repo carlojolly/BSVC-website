@@ -19,6 +19,8 @@ module.exports = {
       fontFamily: {
         mono: "var(--font-geist-mono)",
         sentient: ["'Sentient'", "sans-serif"],
+        "libre-franklin": "var(--font-libre-franklin)",
+        inter: "var(--font-inter)",
       },
       boxShadow: {
         glow: "0 0 8px 2px var(--tw-shadow-color)",
