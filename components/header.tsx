@@ -12,7 +12,7 @@ export const Header = () => {
         <nav className="flex max-lg:hidden absolute left-1/2 -translate-x-1/2 items-center justify-center gap-x-10">
           {["About us", "Activities", "Alumni", "Articles"].map((item) => (
             <Link
-              className="uppercase inline-block font-mono text-foreground/60 hover:text-foreground/100 duration-150 transition-colors ease-out"
+              className="uppercase inline-block font-mono text-foreground/40 hover:text-foreground transition-all duration-300 ease-in-out hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
               href={`#${item.toLowerCase().replace(' ', '-')}`}
               key={item}
             >
