@@ -46,8 +46,20 @@
 
   --font-mono: var(--font-geist-mono);
   --font-sentient: 'Sentient', sans-serif;
+  --font-libre-franklin: var(--font-libre-franklin);
+  --font-inter: var(--font-inter);
 
   --shadow-glow: 0 0 8px 2px var(--tw-shadow-color);
+}
+
+.font-libre-franklin {
+  font-family: var(--font-libre-franklin);
+  font-weight: 700;
+}
+
+.font-inter-extrabold {
+  font-family: var(--font-inter);
+  font-weight: 800;
 }
 
 body {

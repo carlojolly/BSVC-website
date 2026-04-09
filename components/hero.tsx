@@ -9,17 +9,17 @@ import { useState } from "react";
 export function Hero() {
   const [hovering, setHovering] = useState(false);
   return (
-    <div className="flex flex-col h-svh justify-between">
+    <div className="flex flex-col h-svh">
       <GL hovering={hovering} />
 
-      <div className="pb-16 mt-auto text-center relative">
-        <Pill className="mb-6">BETA RELEASE</Pill>
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient">
-          Unlock your <br />
-          <i className="font-light">future</i> growth
+      <div className="flex-1 flex flex-col items-center justify-center pb-16 text-center relative">
+        <Pill className="mb-6">Applications Open</Pill>
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-libre-franklin" style={{ fontWeight: 700 }}>
+          Bocconi Students for <br />
+          <i className="font-libre-franklin" style={{ color: 'rgba(255, 221, 14, 0.95)', borderColor: '#fff524' }}>Venture</i> Capital
         </h1>
-        <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto">
-          Through perpetual investment strategies that outperform the market
+        <p className="font-mono text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto" style={{ fontSize: '18px', lineHeight: '1.25' }}>
+          Creating a VC and startup ecosystem for Bocconi
         </p>
 
         <Link className="contents max-sm:hidden" href="/#contact">
@@ -28,7 +28,7 @@ export function Hero() {
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
           >
-            [Contact Us]
+            Join us
           </Button>
         </Link>
         <Link className="contents sm:hidden" href="/#contact">
