@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Users, Rocket, Lightbulb, TrendingUp } from "lucide-react";
 
 function useInView(threshold = 0.2) {
   const ref = useRef<HTMLDivElement>(null);
@@ -46,29 +45,6 @@ function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: str
   );
 }
 
-const pillars = [
-  {
-    icon: Users,
-    title: "Community First",
-    text: "60 driven members united by ambition to break into VC, tech, and startups.",
-  },
-  {
-    icon: Rocket,
-    title: "Startup Ecosystem",
-    text: "Direct contact with founders building the next generation of companies.",
-  },
-  {
-    icon: TrendingUp,
-    title: "VC Access",
-    text: "Relationships with investors and mentors who shape the funding landscape.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation",
-    text: "Understanding how startups are built, funded, and scaled from day one.",
-  },
-];
-
 const stats = [
   { value: 60, suffix: "+", label: "Members" },
   { value: 3, suffix: "", label: "Pillars" },
@@ -77,7 +53,6 @@ const stats = [
 
 export function About() {
   const { ref: sectionRef, inView: sectionInView } = useInView(0.1);
-  const { ref: pillarsRef, inView: pillarsInView } = useInView(0.15);
 
   return (
     <section id="about-us" className="relative overflow-hidden py-32 md:py-40">
@@ -176,31 +151,6 @@ export function About() {
           </div>
         </div>
 
-        <div
-          ref={pillarsRef}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-20"
-        >
-          {pillars.map((p, i) => {
-            const Icon = p.icon;
-            return (
-              <div
-                key={p.title}
-                className={`group border border-white/10 rounded-xl p-6 bg-white/[0.02] hover:border-primary/30 hover:bg-primary/[0.04] transition-all duration-500 cursor-default ${
-                  pillarsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-                style={{ transitionDelay: pillarsInView ? `${i * 100}ms` : "0ms" }}
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                  <Icon size={18} className="text-primary" />
-                </div>
-                <h3 className="font-libre-franklin text-lg mb-2">{p.title}</h3>
-                <p className="font-mono text-xs text-foreground/50 leading-relaxed">
-                  {p.text}
-                </p>
-              </div>
-            );
-          })}
-        </div>
       </div>
     </section>
   );
