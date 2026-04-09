@@ -4,6 +4,7 @@ import Link from "next/link";
 import { GL } from "./gl";
 import { Pill } from "./pill";
 import { Button } from "./ui/button";
+import { MagneticButton } from "./ui/magnetic-button";
 import { useState } from "react";
 
 export function Hero() {
@@ -16,31 +17,35 @@ export function Hero() {
         <Pill className="mb-6">Applications Open</Pill>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-libre-franklin" style={{ fontWeight: 700 }}>
           Bocconi Students for <br />
-          <i className="font-libre-franklin" style={{ color: 'rgba(255, 221, 14, 0.95)' }}>Venture</i> Capital
+          <i className="font-libre-franklin" style={{ color: 'rgba(255, 221, 14, 0.95)' }}>Venture Capital</i>
         </h1>
         <p className="font-mono text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto" style={{ fontSize: '18px', lineHeight: '1.25' }}>
           Creating a VC and startup ecosystem for Bocconi
         </p>
 
-        <Link className="contents max-sm:hidden" href="/#contact-us">
-          <Button
-            className="mt-14"
-            onMouseEnter={() => setHovering(true)}
-            onMouseLeave={() => setHovering(false)}
-          >
-            Join us
-          </Button>
-        </Link>
-        <Link className="contents sm:hidden" href="/#contact-us">
-          <Button
-            size="sm"
-            className="mt-14"
-            onMouseEnter={() => setHovering(true)}
-            onMouseLeave={() => setHovering(false)}
-          >
-            Join us
-          </Button>
-        </Link>
+        <MagneticButton>
+          <Link className="contents max-sm:hidden" href="/#contact-us">
+            <Button
+              className="mt-14"
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
+            >
+              Join us
+            </Button>
+          </Link>
+        </MagneticButton>
+        <MagneticButton>
+          <Link className="contents sm:hidden" href="/#contact-us">
+            <Button
+              size="sm"
+              className="mt-14"
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
+            >
+              Join us
+            </Button>
+          </Link>
+        </MagneticButton>
       </div>
     </div>
   );
