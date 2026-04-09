@@ -86,9 +86,9 @@ export function Footer() {
           <Image
             src="/bocconi-logo-white.png"
             alt="Bocconi University"
-            width={70}
+            width={90}
             height={0}
-            sizes="70px"
+            sizes="90px"
             className="h-auto flex-shrink-0 opacity-[0.78]"
           />
         </motion.div>
