@@ -5,8 +5,9 @@ export const Logo = (props: { className?: string }) => {
     <Image
       src="/bsvc-logo.png"
       alt="BSVC Logo"
-      width={120}
-      height={44}
+      width={0}
+      height={0}
+      sizes="120px"
       className={props.className + " h-auto"}
       priority
     />
