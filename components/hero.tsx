@@ -15,11 +15,11 @@ export function Hero() {
       <div className="flex-1 flex flex-col items-center justify-center pb-16 text-center relative">
         <Pill className="mb-6">Applications Open</Pill>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-libre-franklin">
-          Bocconi Students <br />
+          Bocconi Students for <br />
           <i className="font-libre-franklin" style={{ color: 'oklab(0.955547 0.004077 0.174772 / 0.8)', borderColor: '#fff524' }}>Venture</i> Capital
         </h1>
-        <p className="font-mono text-lg text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto">
-          Creating a VC and startup ecosystem for Bocconi
+        <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto">
+          Through perpetual investment strategies that outperform the market
         </p>
 
         <Link className="contents max-sm:hidden" href="/#contact">
