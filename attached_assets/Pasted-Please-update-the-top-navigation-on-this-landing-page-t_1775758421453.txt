@@ -1,0 +1,34 @@
+Please update the top navigation on this landing page to behave like this:
+
+• At page load / while at the top of the hero section:
+The navbar should feel fully integrated into the hero, with no visible background bar, box, or stripe behind it.
+	•	Keep the current layout: logo on the left, nav links centered, “CONTACT US” on the right.
+	•	The nav should sit directly over the hero background and dotted wave pattern.
+	•	The logo can appear slightly larger and more open in this top state.
+	•	Links should remain clean and readable over the dark hero background, with the current white/yellow visual language preserved.
+	•	The navbar should feel lightweight, minimal, and almost invisible except for its content.
+
+• Once the user scrolls down slightly (around 50–80px):
+The navbar should smoothly transition into a floating pill-shaped container.
+	•	Add a rounded capsule background behind the full nav.
+	•	The pill should be slightly inset from the left and right edges, not full width.
+	•	Use a dark translucent background that fits this site’s aesthetic, for example black/charcoal with slight transparency, subtle border, and soft blur.
+	•	Keep the palette consistent with the page: white text, yellow accent, black background.
+	•	The BSVC logo should scale down slightly in the scrolled state.
+	•	The nav remains fixed at the top and stays in this pill-style floating state while scrolling.
+
+• When the user scrolls back to the very top:
+The navbar should smoothly return to the original transparent hero-overlay state with no pill background.
+
+Design direction for this page:
+• The scrolled navbar should feel premium, minimal, and slightly futuristic, matching the dark VC/startup branding and dotted motion background.
+• The pill should not look like a generic white SaaS bar. It should feel native to this landing page.
+• A subtle glass effect is fine, but keep it restrained and elegant.
+• Preserve the current spacing, alignment, and nav item order.
+
+Constraints:
+• Do not change the nav items, wording, or overall layout.
+• Only change the navbar’s container styling, transparency, scale, and scroll behavior.
+• Keep the transition smooth and polished, with a short fade/scale/slide effect, not a hard snap.
+• Ensure accessibility and strong contrast in both states.
+• The scrolled pill should not obscure too much of the hero or feel oversized.
