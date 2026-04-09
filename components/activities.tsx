@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Handshake, Megaphone, TrendingUp, PenLine, ArrowUpRight } from "lucide-react";
+import { Handshake, Megaphone, TrendingUp, PenLine } from "lucide-react";
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
@@ -250,15 +250,10 @@ export function Activities() {
                   </p>
 
                   {/* bottom row */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center">
                     <span className="font-mono text-xs text-foreground/25 tracking-widest">
                       {div.index} / 04
                     </span>
-                    <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center
-                      group-hover:border-primary/40 group-hover:bg-primary/10
-                      transition-all duration-300">
-                      <ArrowUpRight size={14} className="text-foreground/30 group-hover:text-primary transition-colors duration-300" />
-                    </div>
                   </div>
                 </div>
               </motion.div>
