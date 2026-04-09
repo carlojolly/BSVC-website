@@ -1,0 +1,61 @@
+Please enhance the “Who We Are” section so that its contents enter in a much more prominent, high-impact way as the user scrolls down to it.
+
+Goal
+
+The section should not just fade in softly. It should feel like a major reveal moment in the page, with strong visual presence and a dynamic sense of arrival that matches the bold, futuristic tone of the site.
+
+Desired scroll animation behavior
+
+When the Who We Are section enters the viewport:
+	•	Trigger a dramatic staggered reveal of all major elements
+	•	The animation should feel intentional, energetic, and premium, not generic
+	•	Elements should appear with a combination of:
+	•	upward movement
+	•	fade-in
+	•	slight scale-in
+	•	optional blur-to-sharp transition
+	•	Timing should be layered so the section builds momentum as it appears
+
+Animation sequence
+
+Please animate the section in this order:
+	1.	Section label / heading area
+	•	The small yellow line and “Who we are” heading should arrive first
+	•	Give this a strong entrance, like a rise-up with fade and slight expansion
+	2.	Left-side body copy
+	•	The paragraph block should reveal just after the heading
+	•	It should feel like it is being introduced with purpose, not just appearing statically
+	•	Consider a stagger across paragraph groups or lines if appropriate
+	3.	Top-right stat cards (60+ Members, 3 Pillars, 100% Student-Led)
+	•	These should enter in a bold staggered sequence
+	•	Each card should feel like it “locks into place”
+	•	Add a slight pop or scale-settle effect so they feel important
+	4.	Bottom-right connection panel
+	•	This panel should reveal last, as a strong finishing move
+	•	The container can rise/fade in first, then the internal rows/bars animate in sequence
+	•	The horizontal lines inside should visibly grow or draw across from left to right
+
+Visual direction
+	•	Make the reveal feel cinematic and significant
+	•	Keep it elegant and refined, not cheesy or overly flashy
+	•	Match the site’s dark, premium, venture-capital aesthetic
+	•	The animation should feel like the section is being activated as you arrive at it
+
+Motion style
+	•	Use staggering aggressively enough that the user notices each group arriving
+	•	Increase the motion distance and presence compared with subtle default scroll reveals
+	•	Use smooth easing, with a polished finish, not abrupt movement
+	•	Total sequence should feel substantial, around 0.8s to 1.5s across all elements combined
+
+Trigger behavior
+	•	Start the animation when roughly 20–30% of the section is in view
+	•	Only animate once on first scroll into view
+	•	Make sure performance stays smooth
+
+Important constraint
+	•	Do not change the layout, copy, spacing, or styling of the section itself
+	•	Only enhance how the elements are revealed on scroll
+
+Overall intent
+
+I want this section to feel like a major storytelling beat, where the content becomes undeniably important the moment the user reaches it.
