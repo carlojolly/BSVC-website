@@ -220,7 +220,7 @@ export function Activities() {
                 <div className="relative p-8">
                   {/* top row: icon */}
                   <div className="mb-8">
-                    <div className="relative">
+                    <div className="relative inline-flex">
                       {/* pulsing ring */}
                       <div className="absolute inset-0 rounded-xl border border-primary/20 opacity-0 group-hover:opacity-100 scale-100 group-hover:scale-[1.35] transition-all duration-700 pointer-events-none" />
                       <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center
