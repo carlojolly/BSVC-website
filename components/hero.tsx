@@ -28,7 +28,7 @@ export function Hero() {
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
           >
-            Apply Now!
+            Join us
           </Button>
         </Link>
         <Link className="contents sm:hidden" href="/#contact">
