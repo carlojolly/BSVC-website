@@ -13,7 +13,6 @@ const divisions = [
     title: "Business Development",
     description:
       "Build partnerships with funds, startups, and accelerators to secure projects and sponsorships. Networking events, webinars, competitions, etc.",
-    tag: "Partnerships & Growth",
   },
   {
     index: "02",
@@ -21,7 +20,6 @@ const divisions = [
     title: "Media",
     description:
       "Promote our events and grow our brand through our different social media channels and weekly newsletter. In charge of web development.",
-    tag: "Brand & Community",
   },
   {
     index: "03",
@@ -29,7 +27,6 @@ const divisions = [
     title: "Venture Capital",
     description:
       "Complete projects with key industry players to get real-life VC exposure. Includes advising early-stage startups, supporting VCs in concrete projects.",
-    tag: "Industry Projects",
   },
   {
     index: "04",
@@ -37,7 +34,6 @@ const divisions = [
     title: "Articles",
     description:
       "Write in-depth analysis on the state of VC, current trends and interesting developments.",
-    tag: "Research & Writing",
   },
 ];
 
@@ -222,8 +218,8 @@ export function Activities() {
                 </span>
 
                 <div className="relative p-8">
-                  {/* top row: icon + tag */}
-                  <div className="flex items-start justify-between mb-8">
+                  {/* top row: icon */}
+                  <div className="mb-8">
                     <div className="relative">
                       {/* pulsing ring */}
                       <div className="absolute inset-0 rounded-xl border border-primary/20 opacity-0 group-hover:opacity-100 scale-100 group-hover:scale-[1.35] transition-all duration-700 pointer-events-none" />
@@ -234,9 +230,6 @@ export function Activities() {
                         <Icon size={20} className="text-primary transition-transform duration-300 group-hover:scale-110" />
                       </div>
                     </div>
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-primary/60 border border-primary/20 rounded-full px-3 py-1 bg-primary/5">
-                      {div.tag}
-                    </span>
                   </div>
 
                   {/* title */}
