@@ -148,7 +148,7 @@ export function Activities() {
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <motion.h2
-              className="font-libre-franklin text-4xl md:text-5xl lg:text-6xl leading-none"
+              className="font-libre-franklin md:text-5xl lg:text-6xl text-[45px]"
               variants={headingVariants}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
