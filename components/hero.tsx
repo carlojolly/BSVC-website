@@ -16,7 +16,7 @@ export function Hero() {
         <Pill className="mb-6">Applications Open</Pill>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-libre-franklin">
           Bocconi Students <br />
-          <i className="font-libre-franklin text-yellow-300" style={{ color: '#fff861', borderColor: '#fff524' }}>Venture</i> Capital
+          <i className="font-libre-franklin" style={{ color: 'oklab(0.955547 0.004077 0.174772 / 0.8)', borderColor: '#fff524' }}>Venture</i> Capital
         </h1>
         <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto">
           Through perpetual investment strategies that outperform the market
