@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { GL } from "./gl";
 import { Pill } from "./pill";
-import { Button } from "./ui/button";
+import { Button } from "./ui/neon-button";
 import { useState } from "react";
 
 export function Hero() {
