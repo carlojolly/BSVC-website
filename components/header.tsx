@@ -22,7 +22,7 @@ export const Header = () => {
       <div
         className={`pointer-events-auto transition-all duration-500 ease-in-out ${
           scrolled
-            ? "mx-auto mt-4 w-[calc(100%-6rem)] max-w-[1060px]"
+            ? "mx-auto mt-4 w-[calc(100%-4rem)] max-w-[1200px]"
             : "mx-0 mt-0 w-full"
         }`}
       >
