@@ -123,7 +123,7 @@ export function About() {
       <div className="container relative" ref={sectionRef}>
 
         <motion.div
-          className="flex items-center gap-3 mb-10"
+          className="flex flex-col gap-4 mb-10"
           variants={headingVariants}
           initial="hidden"
           animate={sectionInView ? "visible" : "hidden"}
