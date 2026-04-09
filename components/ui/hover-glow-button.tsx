@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, MouseEvent, ReactNode } from 'react';
+import React, { useRef, useState, useEffect, MouseEvent, ReactNode } from 'react';
 
 interface ButtonProps {
   children: ReactNode;
@@ -24,20 +24,37 @@ const HoverButton: React.FC<ButtonProps> = ({
   hoverTextColor = '#EBB800',
 }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const rafId = useRef<number | null>(null);
   const [glowPosition, setGlowPosition] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
 
+  useEffect(() => {
+    return () => {
+      if (rafId.current !== null) cancelAnimationFrame(rafId.current);
+    };
+  }, []);
+
   const handleMouseMove = (e: MouseEvent<HTMLButtonElement>) => {
-    if (buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      setGlowPosition({ x, y });
-    }
+    if (!buttonRef.current) return;
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+    if (rafId.current !== null) cancelAnimationFrame(rafId.current);
+    rafId.current = requestAnimationFrame(() => {
+      if (buttonRef.current) {
+        const rect = buttonRef.current.getBoundingClientRect();
+        setGlowPosition({ x: clientX - rect.left, y: clientY - rect.top });
+      }
+    });
   };
 
   const handleMouseEnter = () => setIsHovered(true);
-  const handleMouseLeave = () => setIsHovered(false);
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (rafId.current !== null) {
+      cancelAnimationFrame(rafId.current);
+      rafId.current = null;
+    }
+  };
 
   return (
     <button
