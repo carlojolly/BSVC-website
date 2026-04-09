@@ -59,7 +59,7 @@ export const Header = () => {
           <div className="flex items-center gap-4">
             <Link
               href="/#contact-us"
-              className="uppercase max-lg:hidden font-mono text-sm text-primary hover:text-primary/80 transition-colors duration-150 ease-out"
+              className="uppercase max-lg:hidden font-mono text-sm hover:text-primary/80 transition-colors duration-150 ease-out text-[#ffdd0ef2]"
             >
               Contact US
             </Link>
