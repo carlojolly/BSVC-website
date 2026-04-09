@@ -11,26 +11,9 @@ export function CTA() {
   const inView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="relative overflow-hidden py-40 md:py-52">
-      {/* background layers */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* radial glow behind content */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_50%,rgba(235,184,0,0.07),transparent)]" />
-        {/* outer ambient blobs */}
-        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-primary/[0.05] blur-[120px]" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-primary/[0.04] blur-[100px]" />
-        {/* dot grid */}
-        <div
-          className="absolute inset-0 opacity-[0.18]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-          }}
-        />
-        {/* vignette to fade dot grid at edges */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_40%,black_100%)]" />
-      </div>
+    <section className="relative py-40 md:py-52">
+      {/* soft radial glow behind text only */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_50%_40%_at_50%_50%,rgba(235,184,0,0.05),transparent)]" />
 
       <div className="container relative flex flex-col items-center text-center" ref={ref}>
         {/* label */}
