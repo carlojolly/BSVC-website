@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { HoverButton } from "@/components/ui/hover-glow-button";
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
@@ -56,18 +55,16 @@ export function CTA() {
           animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
           transition={{ duration: 0.65, ease: EASE_OUT_EXPO, delay: 0.35 }}
         >
-          <HoverButton
-            glowColor="#EBB800"
-            backgroundColor="#000000"
-            textColor="#ffffff"
-            hoverTextColor="#EBB800"
-            className="font-mono text-sm font-semibold uppercase tracking-widest
-              px-10 py-4 rounded-full
-              border border-primary/60
-              hover:border-primary hover:shadow-[0_0_30px_rgba(235,184,0,0.25)]"
+          <a
+            href="#"
+            className="group relative inline-flex items-center font-mono text-sm font-semibold uppercase tracking-widest
+              px-10 py-4 rounded-full overflow-hidden
+              border border-primary/60 text-white
+              hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(235,184,0,0.25)]
+              transition-all duration-300"
           >
             Apply now!
-          </HoverButton>
+          </a>
         </motion.div>
       </div>
     </section>
