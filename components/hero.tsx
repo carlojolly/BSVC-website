@@ -22,7 +22,7 @@ export function Hero() {
           Creating a VC and startup ecosystem for Bocconi
         </p>
 
-        <Link className="contents max-sm:hidden" href="/#contact">
+        <Link className="contents max-sm:hidden" href="/#contact-us">
           <Button
             className="mt-14"
             onMouseEnter={() => setHovering(true)}
@@ -31,7 +31,7 @@ export function Hero() {
             Join us
           </Button>
         </Link>
-        <Link className="contents sm:hidden" href="/#contact">
+        <Link className="contents sm:hidden" href="/#contact-us">
           <Button
             size="sm"
             className="mt-14"
