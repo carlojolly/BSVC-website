@@ -7,8 +7,7 @@ export const Logo = (props: { className?: string }) => {
       alt="BSVC Logo"
       width={120}
       height={44}
-      className={props.className}
-      style={{ width: 'auto' }}
+      className={props.className + " h-auto"}
       priority
     />
   );
