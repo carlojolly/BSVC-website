@@ -21,13 +21,15 @@ export const Header = () => {
     <div className="fixed z-50 top-0 left-0 w-full pointer-events-none">
       <div
         className={`pointer-events-auto transition-all duration-500 ease-in-out ${
-          scrolled ? "mx-4 md:mx-10 mt-4" : "mx-0 mt-0"
+          scrolled
+            ? "mx-auto mt-4 w-[calc(100%-3rem)] max-w-[860px]"
+            : "mx-0 mt-0 w-full"
         }`}
       >
         <div
           className={`relative flex items-center transition-all duration-500 ease-in-out ${
             scrolled
-              ? "rounded-full border border-white/[0.1] bg-[rgba(8,8,8,0.82)] backdrop-blur-xl shadow-[0_2px_24px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] px-5 md:px-8 py-3"
+              ? "rounded-full border border-white/[0.1] bg-[rgba(8,8,8,0.82)] backdrop-blur-xl shadow-[0_2px_24px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] px-4 md:px-6 py-3"
               : "container pt-8 md:pt-12 bg-transparent border-transparent"
           }`}
         >
