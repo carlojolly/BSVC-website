@@ -101,20 +101,15 @@ export function About() {
             sectionInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-10">
             <span className="h-px w-10 bg-primary" />
-            <span className="font-mono text-primary text-sm uppercase tracking-widest">
-              About Us
-            </span>
+            <h2 className="font-libre-franklin text-3xl md:text-4xl">
+              Who we are
+            </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
             <div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-libre-franklin leading-[1.05] mb-8">
-                Building bridges between{" "}
-                <span className="text-primary italic">Bocconi</span> and the VC
-                world
-              </h2>
               <div className="space-y-5 font-mono text-foreground/60 text-sm sm:text-base leading-relaxed">
                 <p>
                   Bocconi Students for Venture Capital is a student association
