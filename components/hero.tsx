@@ -18,7 +18,7 @@ export function Hero() {
           Bocconi Students <br />
           <i className="font-libre-franklin" style={{ color: 'oklab(0.955547 0.004077 0.174772 / 0.8)', borderColor: '#fff524' }}>Venture</i> Capital
         </h1>
-        <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto">
+        <p className="font-mono text-lg text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto">
           Creating a VC and startup ecosystem for Bocconi
         </p>
 
