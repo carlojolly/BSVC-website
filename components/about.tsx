@@ -134,7 +134,7 @@ export function About() {
               About us
             </span>
           </div>
-          <h2 className="font-libre-franklin text-3xl md:text-4xl">
+          <h2 className="font-libre-franklin md:text-4xl text-[45px]">
             Who we are
           </h2>
         </motion.div>
