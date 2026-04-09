@@ -48,10 +48,8 @@ export const Header = () => {
                 <Link
                   key={item}
                   href={`#${item.toLowerCase().replace(" ", "-")}`}
-                  className={`uppercase font-mono text-sm whitespace-nowrap transition-colors duration-150 ease-out ${
-                    scrolled
-                      ? "text-white/70 hover:text-white"
-                      : "text-foreground/60 hover:text-foreground"
+                  className={`uppercase font-mono text-sm whitespace-nowrap transition-colors duration-150 ease-out hover:text-white ${
+                    scrolled ? "text-white/70" : "text-foreground/60"
                   }`}
                 >
                   <Text_03 text={item} />
