@@ -155,15 +155,6 @@ export function Activities() {
             >
               What we do
             </motion.h2>
-            <motion.p
-              className="font-mono text-sm text-foreground/45 max-w-xs leading-relaxed"
-              variants={subVariants}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-            >
-              Four focused divisions working together to bridge students with the
-              venture capital ecosystem.
-            </motion.p>
           </div>
         </div>
 
