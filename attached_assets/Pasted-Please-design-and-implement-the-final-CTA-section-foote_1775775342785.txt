@@ -1,0 +1,108 @@
+Please design and implement the final CTA section + footer for the BSVC landing page so they match the overall dark, premium website aesthetic.
+
+Placement
+	•	Add this at the very end of the landing page
+	•	Place it directly below the “What we do” (Activities) section
+	•	It should feel like the natural closing sequence of the page
+
+Overall goal
+
+Create a strong closing experience that:
+	•	provides a clear final call-to-action
+	•	encourages users to apply or get involved
+	•	ends with a refined, minimal footer
+
+⸻
+
+1) Final CTA section
+
+Content
+	•	Heading: Join us today!
+	•	Supporting text: Launch your VC career
+	•	CTA button: Apply now!
+
+Design direction
+	•	Use a dark, premium background consistent with the rest of the site
+	•	Maintain the black / charcoal base, white typography, and yellow accent system
+	•	The section should feel bold, cinematic, and intentional
+
+Visual treatment
+	•	Incorporate subtle enhancements such as:
+	•	soft gradient glow
+	•	faint yellow accent lighting
+	•	radial highlight behind the content
+	•	low-opacity texture or pattern consistent with earlier sections
+	•	Avoid flat or overly simple backgrounds
+
+Layout
+	•	Center all content horizontally
+	•	Use generous vertical spacing to give the section weight
+	•	Ensure a strong visual hierarchy:
+	•	prominent headline
+	•	slightly softer supporting text
+	•	clear, focused CTA button
+
+CTA button
+	•	Style the button to match the site’s design system
+	•	Use a yellow-accent or dark premium button style
+	•	Include subtle hover interactions (e.g. glow, lift, or brightness shift)
+	•	Keep it elegant and refined
+
+Motion
+	•	Add a scroll-triggered reveal:
+	•	fade + upward motion
+	•	optional slight scale or glow
+	•	Keep animation smooth and consistent with the rest of the page
+
+⸻
+
+2) Footer
+
+Content
+
+Include:
+	•	Navigation links:
+	•	Home
+	•	Activities / Divisions
+	•	The Team / Alumni
+	•	Articles
+	•	Social/contact icons:
+	•	Email
+	•	LinkedIn
+	•	Instagram
+	•	Copyright:
+	•	© 2024 Bocconi Students for Venture Capital. All rights reserved
+
+Design direction
+	•	Use a dark footer integrated into the page background
+	•	Keep it minimal, refined, and low-contrast but readable
+	•	Maintain consistent typography and spacing
+
+Layout
+	•	Clean, balanced layout (centered or evenly distributed)
+	•	Separate navigation, social icons, and copyright clearly
+	•	Maintain strong spacing and visual rhythm
+
+Interactions
+	•	Add subtle hover effects:
+	•	use the yellow accent for hover states
+	•	keep interactions restrained and polished
+
+⸻
+
+3) Cohesion
+
+Ensure the CTA and footer are fully consistent with the rest of the site:
+	•	matching typography scale and hierarchy
+	•	consistent border radius and spacing
+	•	consistent shadows, glow, and blur usage
+	•	consistent animation style
+
+This section should feel like the final chapter of the same visual system, not a separate component.
+
+⸻
+
+4) Constraints
+	•	Keep the design dark, premium, and modern
+	•	Ensure full responsiveness across devices
+	•	Maintain accessibility and strong contrast
