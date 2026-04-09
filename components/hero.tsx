@@ -13,7 +13,7 @@ export function Hero() {
       <GL hovering={hovering} />
 
       <div className="pb-16 mt-auto text-center relative">
-        <Pill className="mb-6">BETA RELEASE</Pill>
+        <Pill className="mb-6">Applications Open</Pill>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient">
           Bocconi Students <br />
           <i className="font-light">Venture</i> Capital
@@ -28,7 +28,7 @@ export function Hero() {
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
           >
-            [Contact Us]
+            [Apply Now!]
           </Button>
         </Link>
         <Link className="contents sm:hidden" href="/#contact">
