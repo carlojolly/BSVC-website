@@ -128,7 +128,12 @@ export function About() {
           initial="hidden"
           animate={sectionInView ? "visible" : "hidden"}
         >
-          <span className="h-px w-10 bg-primary" />
+          <div className="flex items-center gap-3">
+            <span className="h-px w-10 bg-primary" />
+            <span className="font-mono text-primary text-xs uppercase tracking-[0.25em]">
+              About us
+            </span>
+          </div>
           <h2 className="font-libre-franklin text-3xl md:text-4xl">
             Who we are
           </h2>
