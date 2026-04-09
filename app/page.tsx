@@ -2,6 +2,7 @@
 
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
+import { Activities } from "@/components/activities";
 import { Leva } from "leva";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
     <>
       <Hero />
       <About />
+      <Activities />
       <Leva hidden />
     </>
   );

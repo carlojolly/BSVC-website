@@ -1,0 +1,56 @@
+Design and implement a visually engaging “What we do” section under the Activities page that showcases the different divisions of Bocconi Students for Venture Capital.
+
+Instead of a basic grid, create a modern, premium-looking card layout that fits seamlessly with the site’s dark, high-end aesthetic.
+
+Structure
+	•	Section label: Activities
+	•	Main heading: What we do
+	•	Below the heading, display 4 divisions:
+	•	Business Development
+	•	Media
+	•	Venture Capital
+	•	Articles
+
+Content presentation
+
+Each division should be presented as a card that includes:
+	•	A minimal icon (yellow accent, consistent with brand)
+	•	A clear title
+	•	A short descriptive paragraph (use the provided content)
+
+Design direction
+	•	Match the site’s dark, VC-style aesthetic (black background, white text, yellow accents)
+	•	Cards should feel elevated and premium, not flat:
+	•	Subtle glass or soft dark background
+	•	Rounded corners
+	•	Light border or glow
+	•	Soft shadow for depth
+	•	Icons should sit slightly above or overlap the card for a more dynamic feel
+
+Layout
+	•	Use a 2x2 grid on desktop
+	•	Stack vertically on mobile
+	•	Maintain generous spacing and clean alignment
+
+Interactions & animation
+	•	Add scroll-triggered reveal animations:
+	•	Cards appear with fade + upward motion + slight scale-in
+	•	Stagger the entrance for a smooth sequence
+	•	Add hover interactions:
+	•	Card slightly lifts or scales
+	•	Border or glow becomes more prominent
+	•	Icon can subtly animate (scale or brightness)
+
+Visual enhancements
+	•	Consider subtle background elements (e.g. faint gradients, noise, or patterns) to avoid a flat look
+	•	Keep animations refined and not distracting
+	•	Ensure strong contrast and readability
+
+Constraints
+	•	Do not change the content itself
+	•	Keep the design consistent with the rest of the landing page
+	•	Ensure full responsiveness and smooth performance
+
+Overall intent
+
+This section should feel like a clear, structured breakdown of what the organization actually does, while maintaining a polished, modern, and slightly dynamic presence that reinforces credibility and professionalism.
