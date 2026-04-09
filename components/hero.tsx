@@ -9,10 +9,10 @@ import { useState } from "react";
 export function Hero() {
   const [hovering, setHovering] = useState(false);
   return (
-    <div className="flex flex-col h-svh justify-between">
+    <div className="flex flex-col h-svh">
       <GL hovering={hovering} />
 
-      <div className="pb-16 mt-auto text-center relative">
+      <div className="flex-1 flex items-center justify-center pb-16 text-center relative">
         <Pill className="mb-6">Applications Open</Pill>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient">
           Bocconi Students <br />
