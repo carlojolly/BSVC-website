@@ -14,7 +14,6 @@ export function CTA() {
     <section className="relative overflow-hidden py-40 md:py-52">
       {/* background layers */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
         {/* radial glow behind content */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_50%,rgba(235,184,0,0.07),transparent)]" />
         {/* outer ambient blobs */}
