@@ -1,0 +1,81 @@
+Please update the footer design to better reflect credibility, branding, and visual polish, while maintaining the dark, premium aesthetic of the site.
+
+1) Replace / improve the “BSVC” text
+
+The current “BSVC” text in the footer feels too plain and does not match the quality of the rest of the design.
+
+Please update it using one of the following approaches:
+	•	Either:
+	•	Use the same styled logo/mark used in the navbar (preferred for consistency), or
+	•	Or:
+	•	Redesign the text treatment so it feels more refined:
+	•	improved typography (tracking, weight, spacing)
+	•	subtle accent (e.g. yellow detail or small icon mark)
+	•	avoid it looking like default/plain text
+
+Goal: it should feel like a real brand mark, not placeholder text.
+
+⸻
+
+2) Add Bocconi affiliation (important)
+
+We want to clearly but elegantly communicate that this is a Bocconi-affiliated student association.
+
+Placement
+	•	Add the Bocconi logo in the footer, ideally:
+	•	below the navigation row, or
+	•	aligned subtly near the copyright line
+	•	It should not compete with the main brand, but should still be visible
+
+Design treatment
+	•	Use one of the provided Bocconi logos
+	•	Adapt it to fit the dark theme:
+	•	use a monochrome (white or muted gray) version
+	•	reduce opacity slightly (e.g. 70–85%) so it feels integrated, not overpowering
+	•	Keep it smaller and secondary in hierarchy
+
+Optional supporting text
+
+You can include a subtle label such as:
+	•	“In collaboration with Bocconi University”
+	•	or “Bocconi Students Association”
+
+Keep this text minimal, small, and low-contrast.
+
+⸻
+
+3) Layout refinement
+	•	Ensure the footer has a clear visual hierarchy:
+	1.	Brand (BSVC logo/mark)
+	2.	Navigation links
+	3.	Social icons
+	4.	Bocconi affiliation
+	5.	Copyright
+	•	Maintain clean spacing and alignment
+	•	Avoid clutter, keep it minimal and breathable
+
+⸻
+
+4) Styling consistency
+	•	Match the rest of the site:
+	•	dark background
+	•	subtle borders/dividers
+	•	soft glow or blur where appropriate
+	•	Keep typography consistent with headings/body used above
+	•	Ensure hover states use the yellow accent
+
+⸻
+
+5) Subtle enhancements (optional but recommended)
+	•	Add a thin divider line above the footer content with low opacity
+	•	Slight hover animation on social icons (scale or glow)
+	•	Smooth fade-in on scroll for the footer
+
+⸻
+
+Overall intent
+
+The footer should:
+	•	feel credible and institutional (through Bocconi branding)
+	•	feel premium and cohesive with the rest of the site
+	•	clearly communicate legitimacy without overwhelming the BSVC identity
