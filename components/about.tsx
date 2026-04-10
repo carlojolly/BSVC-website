@@ -142,7 +142,7 @@ export function About() {
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
 
           <motion.div
-            className="space-y-5 font-mono text-foreground/60 text-sm sm:text-base leading-relaxed"
+            className="space-y-5 font-mono text-foreground/60 text-[17px] leading-relaxed"
             variants={bodyContainerVariants}
             initial="hidden"
             animate={sectionInView ? "visible" : "hidden"}
