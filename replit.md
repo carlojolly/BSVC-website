@@ -1,11 +1,11 @@
 # Skal Ventures - Investment Landing Page
 
 ## Overview
-A Next.js 15.2.4 investment landing page ("Skal Ventures") with React 19, Tailwind CSS v3, and Three.js/React Three Fiber for WebGL animations. Migrated from Vercel to Replit.
+A Next.js 15.2.9 investment landing page ("Skal Ventures") with React 19, Tailwind CSS v3, and Three.js/React Three Fiber for WebGL animations. Migrated from Vercel to Replit.
 
 ## Architecture
 
-- **Framework**: Next.js 15.2.4 (App Router)
+- **Framework**: Next.js 15.2.9 (App Router)
 - **Styling**: Tailwind CSS v3.4.x with PostCSS + Autoprefixer
 - **3D/WebGL**: Three.js + React Three Fiber + Drei
 - **UI Components**: Radix UI primitives + shadcn/ui components
