@@ -57,11 +57,10 @@ const TICKER_ITEMS = [
 ];
 
 const headingVariants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.75, ease: EASE_OUT_EXPO },
   },
 };

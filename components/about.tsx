@@ -35,9 +35,9 @@ const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 const EASE_SPRING_POP = [0.34, 1.56, 0.64, 1] as const;
 
 const headingVariants = {
-  hidden: { opacity: 0, y: 48, scale: 0.95, filter: "blur(8px)" },
+  hidden: { opacity: 0, y: 48, scale: 0.95 },
   visible: {
-    opacity: 1, y: 0, scale: 1, filter: "blur(0px)",
+    opacity: 1, y: 0, scale: 1,
     transition: { duration: 0.75, ease: EASE_OUT_EXPO },
   },
 };
@@ -48,9 +48,9 @@ const bodyContainerVariants = {
 };
 
 const bodyItemVariants = {
-  hidden: { opacity: 0, y: 28, filter: "blur(5px)" },
+  hidden: { opacity: 0, y: 28 },
   visible: {
-    opacity: 1, y: 0, filter: "blur(0px)",
+    opacity: 1, y: 0,
     transition: { duration: 0.65, ease: EASE_OUT_EXPO },
   },
 };

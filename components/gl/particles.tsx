@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { useMemo, useState, useRef, useEffect } from "react";
+import { useMemo, useState, useRef } from "react";
 import { createPortal, useFrame } from "@react-three/fiber";
 import { useFBO } from "@react-three/drei";
 
@@ -11,7 +11,7 @@ export function Particles({
   speed,
   aperture,
   focus,
-  size = 512,
+  size = 256,
   noiseScale = 1.0,
   noiseIntensity = 0.5,
   timeScale = 0.5,
@@ -24,7 +24,6 @@ export function Particles({
   ...props
 }: {
   speed: number;
-  // fov: number
   aperture: number;
   focus: number;
   size: number;
@@ -38,14 +37,13 @@ export function Particles({
   manualTime?: number;
   introspect?: boolean;
 }) {
-  // Reveal animation state
   const revealStartTime = useRef<number | null>(null);
   const [isRevealing, setIsRevealing] = useState(true);
-  const revealDuration = 3.5; // seconds
-  // Create simulation material with scale parameter
+  const revealDuration = 3.5;
+
   const simulationMaterial = useMemo(() => {
-    return new SimulationMaterial(planeScale);
-  }, [planeScale]);
+    return new SimulationMaterial(planeScale, size);
+  }, [planeScale, size]);
 
   const target = useFBO(size, size, {
     minFilter: THREE.NearestFilter,
@@ -96,31 +94,22 @@ export function Particles({
     state.gl.render(scene, camera);
     state.gl.setRenderTarget(null);
 
-    // Use manual time if enabled, otherwise use elapsed time
     const currentTime = useManualTime ? manualTime : state.clock.elapsedTime;
 
-    // Initialize reveal start time on first frame
     if (revealStartTime.current === null) {
       revealStartTime.current = currentTime;
     }
 
-    // Calculate reveal progress
     const revealElapsed = currentTime - revealStartTime.current;
     const revealProgress = Math.min(revealElapsed / revealDuration, 1.0);
-
-    // Ease out the reveal animation
     const easedProgress = 1 - Math.pow(1 - revealProgress, 3);
-
-    // Map progress to reveal factor (0 = fully hidden, higher values = more revealed)
-    // We want to start from center (0) and expand outward (higher values)
-    const revealFactor = easedProgress * 4.0; // Doubled the radius for larger coverage
+    const revealFactor = easedProgress * 4.0;
 
     if (revealProgress >= 1.0 && isRevealing) {
       setIsRevealing(false);
     }
 
     dofPointsMaterial.uniforms.uTime.value = currentTime;
-
     dofPointsMaterial.uniforms.uFocus.value = focus;
     dofPointsMaterial.uniforms.uBlur.value = aperture;
 
@@ -137,7 +126,6 @@ export function Particles({
     simulationMaterial.uniforms.uNoiseIntensity.value = noiseIntensity;
     simulationMaterial.uniforms.uTimeScale.value = timeScale * speed;
 
-    // Update point material uniforms
     dofPointsMaterial.uniforms.uPointSize.value = pointSize;
     dofPointsMaterial.uniforms.uOpacity.value = opacity;
     dofPointsMaterial.uniforms.uRevealFactor.value = revealFactor;
@@ -166,12 +154,6 @@ export function Particles({
           <bufferAttribute attach="attributes-position" args={[particles, 3]} />
         </bufferGeometry>
       </points>
-
-      {/* Plane showing simulation texture */}
-      {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]}>
-        <planeGeometry args={[1, 1]} />
-        <meshBasicMaterial map={target.texture} />
-      </mesh> */}
     </>
   );
 }

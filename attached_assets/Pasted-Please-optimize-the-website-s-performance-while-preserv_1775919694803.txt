@@ -1,0 +1,48 @@
+Please optimize the website’s performance while preserving the current visual aesthetic as much as possible.
+
+Goal
+
+Reduce lag and improve smoothness, especially from the continuously moving background and multiple animated sections, without noticeably downgrading the design.
+
+Priorities
+	•	Keep the overall look and feel the same
+	•	Preserve the dark premium aesthetic, motion language, and immersive background
+	•	Focus on performance-minded refinement, not redesign
+
+What to optimize
+	•	Reduce the rendering cost of the moving background
+	•	lower particle/dot density slightly if needed
+	•	simplify any overly expensive continuous animations
+	•	avoid unnecessary layered effects if they are expensive
+	•	keep the same visual impression, just make it lighter
+	•	Make animations more efficient
+	•	prefer transform and opacity animations over costly layout or paint-heavy properties
+	•	avoid animating large blur, shadow, mask, or filter effects continuously
+	•	add GPU-friendly hints where appropriate, such as will-change: transform
+	•	Reduce concurrent animation load
+	•	keep scroll reveals and hover effects, but make sure they are lightweight
+	•	avoid too many simultaneous observers or animation triggers running at once
+	•	keep motion smooth and subtle rather than constantly heavy
+	•	Optimize the hero / animated background loading strategy
+	•	lazy-load or defer heavy visual layers if possible
+	•	avoid blocking initial render with expensive visual effects
+	•	use a lighter fallback if needed for weaker devices
+	•	Improve responsiveness across devices
+	•	use a lighter animation version on mobile or lower-performance environments
+	•	respect prefers-reduced-motion with a toned-down variant rather than removing the aesthetic entirely
+
+Constraints
+	•	Do not redesign the page
+	•	Do not remove the moving background entirely unless absolutely necessary
+	•	Do not flatten the visual identity
+	•	Keep the final result looking polished, premium, and visually close to the current version
+
+Desired outcome
+
+The website should feel:
+	•	noticeably smoother
+	•	less laggy in preview and production
+	•	visually almost identical to the current design
+	•	still immersive and high-end, just more efficient under the hood
+
+When making tradeoffs, prioritize changes that deliver the biggest performance improvement with the smallest visible aesthetic change.
