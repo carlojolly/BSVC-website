@@ -62,7 +62,7 @@ export const GL = ({ hovering }: { hovering: boolean }) => {
           speed={PARTICLE_CONFIG.speed}
           aperture={PARTICLE_CONFIG.aperture}
           focus={PARTICLE_CONFIG.focus}
-          size={256}
+          size={512}
           noiseScale={PARTICLE_CONFIG.noiseScale}
           noiseIntensity={PARTICLE_CONFIG.noiseIntensity}
           timeScale={PARTICLE_CONFIG.timeScale}

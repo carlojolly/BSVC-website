@@ -11,7 +11,7 @@ export function Particles({
   speed,
   aperture,
   focus,
-  size = 256,
+  size = 512,
   noiseScale = 1.0,
   noiseIntensity = 0.5,
   timeScale = 0.5,
