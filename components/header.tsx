@@ -6,7 +6,7 @@ import { Logo } from "./logo";
 import { MobileMenu } from "./mobile-menu";
 import { Text_03 } from "./ui/wave-text";
 
-const NAV_ITEMS = ["About us", "Activities", "The Team", "Articles"];
+const NAV_ITEMS = ["About us", "Activities", "The Team", "Gallery", "Articles"];
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);

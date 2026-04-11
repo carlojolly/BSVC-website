@@ -196,7 +196,7 @@ export function Activities() {
               <motion.div
                 key={div.title}
                 variants={cardVariants}
-                className="group relative rounded-2xl border border-white/[0.08] bg-white/[0.07] overflow-hidden cursor-default
+                className="group relative rounded-2xl border border-white/[0.08] bg-white/[0.10] overflow-hidden cursor-default
                   transition-all duration-500 ease-out
                   hover:border-primary/25 hover:bg-white/[0.05]
                   hover:-translate-y-1.5
