@@ -19,11 +19,11 @@
 }
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #111111;
   --primary: #FFC700;
-  --primary-foreground: #ffffff;
-  --border: #424242;
+  --primary-foreground: #111111;
+  --border: #d0d0d0;
 }
 
 .font-libre-franklin {

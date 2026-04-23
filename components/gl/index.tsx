@@ -1,10 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { Effects } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Particles } from "./particles";
-import { VignetteShader } from "./shaders/vignetteShader";
 
 const PARTICLE_CONFIG = {
   speed: 1.0,
@@ -16,28 +13,9 @@ const PARTICLE_CONFIG = {
   pointSize: 10.0,
   opacity: 0.8,
   planeScale: 10.0,
-  vignetteDarkness: 1.5,
-  vignetteOffset: 0.4,
 };
 
-function getParticleSize() {
-  if (typeof window === "undefined") return 256;
-  const isMobile = window.innerWidth < 768;
-  const isLowEnd =
-    typeof navigator !== "undefined" &&
-    navigator.hardwareConcurrency !== undefined &&
-    navigator.hardwareConcurrency <= 4;
-  if (isMobile || isLowEnd) return 128;
-  return 256;
-}
-
 export const GL = ({ hovering }: { hovering: boolean }) => {
-  const size = useRef(256);
-
-  useEffect(() => {
-    size.current = getParticleSize();
-  }, []);
-
   return (
     <div id="webgl" style={{ willChange: "transform" }}>
       <Canvas
@@ -57,7 +35,7 @@ export const GL = ({ hovering }: { hovering: boolean }) => {
           far: 300,
         }}
       >
-        <color attach="background" args={["#000"]} />
+        <color attach="background" args={["#ffffff"]} />
         <Particles
           speed={PARTICLE_CONFIG.speed}
           aperture={PARTICLE_CONFIG.aperture}
@@ -73,13 +51,6 @@ export const GL = ({ hovering }: { hovering: boolean }) => {
           manualTime={0}
           introspect={hovering}
         />
-        <Effects multisamping={0} disableGamma>
-          <shaderPass
-            args={[VignetteShader]}
-            uniforms-darkness-value={PARTICLE_CONFIG.vignetteDarkness}
-            uniforms-offset-value={PARTICLE_CONFIG.vignetteOffset}
-          />
-        </Effects>
       </Canvas>
     </div>
   );

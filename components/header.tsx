@@ -22,17 +22,17 @@ export const Header = () => {
     <div className="fixed z-50 top-0 left-0 w-full pointer-events-none">
       <div className="pointer-events-auto container relative">
 
-        {/* Background pill — absolutely positioned behind content, never affects layout */}
+        {/* Background pill */}
         <div
           aria-hidden
           className={`absolute pointer-events-none transition-all duration-500 ease-in-out ${
             scrolled
-              ? "inset-x-0 top-2 bottom-2 rounded-full border border-white/[0.1] bg-[rgba(8,8,8,0.82)] backdrop-blur-xl shadow-[0_2px_24px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.06)]"
+              ? "inset-x-0 top-2 bottom-2 rounded-full border border-black/[0.08] bg-[rgba(255,255,255,0.90)] backdrop-blur-xl shadow-[0_2px_24px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(0,0,0,0.04)]"
               : "inset-x-0 top-0 bottom-0 rounded-none border-transparent bg-transparent shadow-none backdrop-blur-none"
           }`}
         />
 
-        {/* Content row — padding never changes, no layout shift */}
+        {/* Content row */}
         <div className="relative flex items-center justify-between pt-5 pb-4 md:pt-6 md:pb-5">
           <Link href="/">
             <Logo
@@ -47,8 +47,8 @@ export const Header = () => {
               <Link
                 key={item}
                 href={`#${item.toLowerCase().replace(" ", "-")}`}
-                className={`uppercase font-mono text-sm whitespace-nowrap transition-colors duration-150 ease-out hover:text-white ${
-                  scrolled ? "text-white/70" : "text-foreground/60"
+                className={`uppercase font-mono text-sm whitespace-nowrap transition-colors duration-150 ease-out hover:text-foreground ${
+                  scrolled ? "text-foreground/70" : "text-foreground/60"
                 }`}
               >
                 <Text_03 text={item} />

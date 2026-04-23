@@ -26,7 +26,7 @@ export function Footer() {
   const inView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <footer className="relative border-t border-white/[0.08]" ref={ref}>
+    <footer className="relative border-t border-black/[0.08]" ref={ref}>
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,rgba(235,184,0,0.04),transparent)]" />
 
       <div className="container relative py-14 md:py-16">
@@ -59,7 +59,7 @@ export function Footer() {
                 aria-label={label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center
+                className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center
                   text-foreground/40
                   hover:text-primary hover:border-primary/40 hover:bg-primary/10 hover:scale-110
                   transition-all duration-300"
@@ -71,7 +71,7 @@ export function Footer() {
         </motion.div>
 
         {/* ── divider ── */}
-        <div className="h-px bg-white/[0.06] mb-6" />
+        <div className="h-px bg-black/[0.06] mb-6" />
 
         {/* ── row 2: copyright (left) + Bocconi logo (right) ── */}
         <motion.div
@@ -80,17 +80,17 @@ export function Footer() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.65, ease: EASE_OUT_EXPO, delay: 0.15 }}
         >
-          <p className="font-mono text-[11px] text-foreground/20 tracking-widest uppercase">
+          <p className="font-mono text-[11px] text-foreground/30 tracking-widest uppercase">
             © 2024 Bocconi Students for Venture Capital. All rights reserved.
           </p>
 
           <Image
-            src="/bocconi-logo-white.png"
+            src="/bocconi-logo.png"
             alt="Bocconi University"
             width={90}
             height={0}
             sizes="90px"
-            className="h-auto flex-shrink-0 opacity-[0.78]"
+            className="h-auto flex-shrink-0 opacity-70"
           />
         </motion.div>
 

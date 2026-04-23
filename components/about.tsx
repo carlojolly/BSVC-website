@@ -87,7 +87,7 @@ function BarRow({ label, pct, delay, inView }: { label: string; pct: number; del
       <div className="flex justify-between font-mono text-sm">
         <span className="text-foreground/70">{label}</span>
       </div>
-      <div className="h-px bg-white/10 relative overflow-hidden rounded-full">
+      <div className="h-px bg-black/10 relative overflow-hidden rounded-full">
         <motion.div
           className="h-full bg-primary"
           initial={{ width: "0%" }}
@@ -109,8 +109,8 @@ export function About() {
     <section id="about-us" className="relative overflow-hidden py-32 md:py-40">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary/[0.03] blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-primary/[0.04] blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary/[0.06] blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-primary/[0.07] blur-3xl" />
         <div
           className="absolute inset-0 opacity-[0.015]"
           style={{
@@ -195,7 +195,7 @@ export function About() {
               variants={panelVariants}
               initial="hidden"
               animate={sectionInView ? "visible" : "hidden"}
-              className="border border-white/10 rounded-xl p-6 bg-white/[0.02] space-y-4"
+              className="border border-black/[0.08] rounded-xl p-6 bg-black/[0.02] space-y-4"
             >
               <p className="font-mono text-xs uppercase tracking-widest text-foreground/40">
                 Who we connect you with

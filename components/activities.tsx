@@ -120,7 +120,7 @@ export function Activities() {
       {/* ── ambient glows ── */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
         <div className="absolute -top-32 right-0 w-[700px] h-[700px] rounded-full bg-primary/[0.04] blur-[120px]" />
         <div className="absolute bottom-0 -left-40 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[100px]" />
       </div>
@@ -155,7 +155,7 @@ export function Activities() {
 
         {/* ── ticker strip ── */}
         <motion.div
-          className="relative mb-14 overflow-hidden rounded-full border border-white/[0.08] bg-white/[0.02] py-3"
+          className="relative mb-14 overflow-hidden rounded-full border border-black/[0.08] bg-black/[0.03] py-3"
           variants={tickerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -178,8 +178,8 @@ export function Activities() {
             ))}
           </div>
           {/* fade edges */}
-          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none" />
         </motion.div>
 
         {/* ── cards grid ── */}
@@ -195,11 +195,11 @@ export function Activities() {
               <motion.div
                 key={div.title}
                 variants={cardVariants}
-                className="group relative rounded-2xl border border-white/[0.08] bg-white/[0.10] overflow-hidden cursor-default
+                className="group relative rounded-2xl border border-black/[0.08] bg-black/[0.03] overflow-hidden cursor-default
                   transition-all duration-500 ease-out
-                  hover:border-primary/25 hover:bg-white/[0.05]
+                  hover:border-primary/30 hover:bg-primary/[0.03]
                   hover:-translate-y-1.5
-                  hover:shadow-[0_20px_60px_-20px_rgba(235,184,0,0.2),0_0_0_1px_rgba(235,184,0,0.08)]"
+                  hover:shadow-[0_20px_60px_-20px_rgba(235,184,0,0.25),0_0_0_1px_rgba(235,184,0,0.10)]"
               >
                 {/* top accent bar */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -210,7 +210,7 @@ export function Activities() {
                 {/* giant faded index */}
                 <span
                   className="absolute -right-2 -bottom-4 font-libre-franklin font-black text-[9rem] leading-none select-none pointer-events-none
-                    text-white/[0.04] group-hover:text-primary/[0.07] transition-colors duration-500"
+                    text-black/[0.04] group-hover:text-primary/[0.07] transition-colors duration-500"
                   aria-hidden
                 >
                   {div.index}
@@ -232,7 +232,7 @@ export function Activities() {
                   </div>
 
                   {/* title */}
-                  <h3 className="font-libre-franklin text-2xl mb-3 leading-tight group-hover:text-white transition-colors duration-300">
+                  <h3 className="font-libre-franklin text-2xl mb-3 leading-tight group-hover:text-foreground transition-colors duration-300">
                     {div.title}
                   </h3>
 

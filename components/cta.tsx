@@ -59,7 +59,7 @@ export function CTA() {
             href="#"
             className="group relative inline-flex items-center font-mono text-sm font-semibold uppercase tracking-widest
               px-10 py-4 rounded-full overflow-hidden
-              border border-primary/60 text-white
+              border border-primary/60 text-foreground
               hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(235,184,0,0.25)]
               transition-all duration-300"
           >
