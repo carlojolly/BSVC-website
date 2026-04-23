@@ -8,6 +8,8 @@ import { Text_03 } from "./ui/wave-text";
 
 const NAV_ITEMS = ["About us", "Activities", "The Team", "Gallery", "Articles"];
 
+const BRAND_BLUE = "#2596be";
+
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -20,16 +22,45 @@ export const Header = () => {
 
   return (
     <div className="fixed z-50 top-0 left-0 w-full pointer-events-none">
+
+      {/* ── Initial state: full-width gradient + fading blur overlay ── */}
+      {!scrolled && (
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 pointer-events-none transition-opacity duration-500"
+          style={{ height: "90px" }}
+        >
+          {/* Solid-to-transparent color gradient */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(to bottom, ${BRAND_BLUE} 0%, rgba(255,255,255,0) 100%)`,
+            }}
+          />
+          {/* Backdrop blur that fades away toward the bottom */}
+          <div
+            className="absolute inset-0 backdrop-blur-md"
+            style={{
+              WebkitMaskImage: "linear-gradient(to bottom, black 35%, transparent 100%)",
+              maskImage: "linear-gradient(to bottom, black 35%, transparent 100%)",
+            }}
+          />
+        </div>
+      )}
+
       <div className="pointer-events-auto container relative">
 
-        {/* Background pill */}
+        {/* ── Scrolled state: floating pill ── */}
         <div
           aria-hidden
           className={`absolute pointer-events-none transition-all duration-500 ease-in-out ${
             scrolled
-              ? "inset-x-0 top-2 bottom-2 rounded-full border border-black/[0.08] bg-[rgba(255,255,255,0.90)] backdrop-blur-xl shadow-[0_2px_24px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(0,0,0,0.04)]"
-              : "inset-x-0 top-0 bottom-0 rounded-none border-transparent bg-transparent shadow-none backdrop-blur-none"
+              ? "inset-x-0 top-2 bottom-2 rounded-full border border-[#1a7a9e]/30 shadow-[0_4px_32px_rgba(37,150,190,0.25)]"
+              : "inset-x-0 top-0 bottom-0 rounded-none border-transparent"
           }`}
+          style={{
+            backgroundColor: scrolled ? BRAND_BLUE : "transparent",
+          }}
         />
 
         {/* Content row */}
@@ -47,9 +78,7 @@ export const Header = () => {
               <Link
                 key={item}
                 href={`#${item.toLowerCase().replace(" ", "-")}`}
-                className={`uppercase font-mono text-sm whitespace-nowrap transition-colors duration-150 ease-out hover:text-foreground ${
-                  scrolled ? "text-foreground/70" : "text-foreground/60"
-                }`}
+                className="uppercase font-mono text-sm whitespace-nowrap transition-colors duration-150 ease-out text-white/80 hover:text-white"
               >
                 <Text_03 text={item} />
               </Link>
