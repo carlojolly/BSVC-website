@@ -91,8 +91,7 @@ export class DofPointsMaterial extends THREE.ShaderMaterial {
         
         float alpha = (1.04 - clamp(vDistance, 0.0, 1.0)) * clamp(smoothstep(-0.5, 0.25, vPosY), 0.0, 1.0) * uOpacity * revealMask * uRevealProgress * sparkleBrightness;
 
-        // Dark grey particles on white background
-        vec3 particleColor = vec3(0.18);
+        vec3 particleColor = vec3(0.06);
         float finalAlpha = mix(alpha, sparkleBrightness - 1.1, uTransition);
         gl_FragColor = vec4(particleColor, finalAlpha);
       }`,
