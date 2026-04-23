@@ -23,21 +23,18 @@ export const Header = () => {
   return (
     <div className="fixed z-50 top-0 left-0 w-full pointer-events-none">
 
-      {/* ── Initial state: full-width gradient + fading blur overlay ── */}
       {!scrolled && (
         <div
           aria-hidden
           className="absolute inset-x-0 top-0 pointer-events-none transition-opacity duration-500"
           style={{ height: "90px" }}
         >
-          {/* Solid-to-transparent color gradient */}
           <div
             className="absolute inset-0"
             style={{
-              background: `linear-gradient(to bottom, ${BRAND_BLUE} 0%, rgba(255,255,255,0) 100%)`,
+              background: `linear-gradient(to bottom, rgba(60,60,59,0.96) 0%, ${BRAND_BLUE} 35%, rgba(255,255,255,0) 100%)`,
             }}
           />
-          {/* Backdrop blur that fades away toward the bottom */}
           <div
             className="absolute inset-0 backdrop-blur-md"
             style={{
@@ -49,8 +46,6 @@ export const Header = () => {
       )}
 
       <div className="pointer-events-auto container relative">
-
-        {/* ── Scrolled state: floating pill ── */}
         <div
           aria-hidden
           className={`absolute pointer-events-none transition-all duration-500 ease-in-out ${
@@ -63,7 +58,6 @@ export const Header = () => {
           }}
         />
 
-        {/* Content row */}
         <div className="relative flex items-center justify-between pt-5 pb-4 md:pt-6 md:pb-5">
           <Link href="/">
             <Logo
