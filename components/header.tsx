@@ -8,7 +8,7 @@ import { Text_03 } from "./ui/wave-text";
 
 const NAV_ITEMS = ["About us", "Activities", "The Team", "Gallery", "Articles"];
 
-const BRAND_BLUE = "#2596be";
+const BRAND_BLUE = "#3c3c3b";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -55,7 +55,7 @@ export const Header = () => {
           aria-hidden
           className={`absolute pointer-events-none transition-all duration-500 ease-in-out ${
             scrolled
-              ? "inset-x-0 top-2 bottom-2 rounded-full border border-[#1a7a9e]/30 shadow-[0_4px_32px_rgba(37,150,190,0.25)]"
+              ? "inset-x-0 top-2 bottom-2 rounded-full border border-black/[0.15] shadow-[0_4px_32px_rgba(60,60,59,0.20)]"
               : "inset-x-0 top-0 bottom-0 rounded-none border-transparent"
           }`}
           style={{
