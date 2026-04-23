@@ -1,17 +1,26 @@
 "use client";
 
-import Link from "next/link";
+import { useEffect, useState } from "react";
 import { GL } from "./gl";
 import { Pill } from "./pill";
-import { Button } from "./ui/button";
-import { MagneticButton } from "./ui/magnetic-button";
-import { useState } from "react";
 
 export function Hero() {
-  const [hovering, setHovering] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const threshold = window.innerHeight * 0.3;
+      setScrolled(window.scrollY > threshold);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="flex flex-col h-svh">
-      <GL hovering={hovering} />
+      <GL hovering={scrolled} />
 
       <div className="flex-1 flex flex-col items-center justify-center pb-16 text-center relative">
         <Pill className="mb-6">Applications Open</Pill>
@@ -22,30 +31,6 @@ export function Hero() {
         <p className="font-mono text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto" style={{ fontSize: '18px', lineHeight: '1.25' }}>
           Creating a VC and startup ecosystem for Bocconi
         </p>
-
-        <MagneticButton>
-          <Link className="contents max-sm:hidden" href="/#contact-us">
-            <Button
-              className="mt-14"
-              onMouseEnter={() => setHovering(true)}
-              onMouseLeave={() => setHovering(false)}
-            >
-              Join us
-            </Button>
-          </Link>
-        </MagneticButton>
-        <MagneticButton>
-          <Link className="contents sm:hidden" href="/#contact-us">
-            <Button
-              size="sm"
-              className="mt-14"
-              onMouseEnter={() => setHovering(true)}
-              onMouseLeave={() => setHovering(false)}
-            >
-              Join us
-            </Button>
-          </Link>
-        </MagneticButton>
       </div>
     </div>
   );
