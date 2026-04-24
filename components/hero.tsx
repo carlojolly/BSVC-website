@@ -36,9 +36,9 @@ export function Hero() {
         <p
           className="font-libre-franklin text-center mt-1 md:mt-2"
           style={{
-            color: "#ffffff",
+            color: "#3c3c3b",
             fontSize: "clamp(0.75rem, 1.6vw, 1.5rem)",
-            fontWeight: 500,
+            fontWeight: 400,
             textShadow: "0 1px 8px rgba(0,0,0,0.25)",
           }}
         >
