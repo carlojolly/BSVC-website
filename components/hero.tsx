@@ -25,6 +25,8 @@ export function Hero() {
           priority
           sizes="100vw"
         />
+        {/* Subtle dark tint scoped to the image only */}
+        <div className="absolute inset-0 bg-black/25" />
         {/* Gradient fade: transparent → white over the bottom ~40% of the image */}
         <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-b from-transparent to-white" />
       </div>
@@ -67,7 +69,7 @@ export function Hero() {
           className="font-libre-franklin tracking-wide"
           style={{ color: "#888994", fontSize: "clamp(0.65rem, 1vw, 0.85rem)", fontWeight: 300 }}
         >
-          Discover More
+        
         </span>
         <svg
           className="animate-bounce"
