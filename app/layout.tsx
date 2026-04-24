@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Libre_Franklin, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
+import { FixedAurora } from "@/components/ui/fixed-aurora";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -21,9 +22,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Skal Ventures",
-  description: "Investment strategies that outperform the market",
-  generator: 'v0.app'
+  title: "BSVC — Bocconi Students for Venture Capital",
+  description: "Creating a VC and startup ecosystem for Bocconi",
 };
 
 export default function RootLayout({
@@ -37,6 +37,7 @@ export default function RootLayout({
         className={`${geistMono.variable} ${libreF.variable} ${inter.variable} antialiased`}
         suppressHydrationWarning
       >
+        <FixedAurora />
         <Header />
         {children}
       </body>
