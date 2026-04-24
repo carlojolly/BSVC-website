@@ -20,24 +20,34 @@ export function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-b from-transparent to-white" />
       </div>
 
-      {/* Heading overlapping the bottom of the photo */}
-      <div className="relative -mt-[4vw] md:-mt-[3.5vw] flex justify-center px-2 md:px-4">
+      {/* Heading — pulled up into the lower portion of the photo */}
+      <div className="relative -mt-[18vw] md:-mt-[16vw] flex flex-col items-center px-4 md:px-8">
         <h1
-          className="font-libre-franklin whitespace-nowrap flex items-center gap-2 md:gap-3 text-[clamp(0.875rem,3.8vw,4rem)] leading-none"
-          style={{ fontWeight: 700 }}
+          className="font-libre-franklin uppercase whitespace-nowrap leading-none"
+          style={{
+            fontSize: "clamp(2.5rem, 10vw, 11rem)",
+            fontWeight: 900,
+            textShadow: "0 2px 24px rgba(0,0,0,0.18)",
+          }}
         >
-          <span>Bocconi Students for</span>
-          <span
-            className="bg-zinc-200/75 backdrop-blur-sm px-2.5 py-1 md:px-3.5 md:py-1.5 rounded-full uppercase tracking-tight"
-            style={{ color: "rgba(255, 221, 14, 0.95)", fontWeight: 800 }}
-          >
-            Venture Capital
-          </span>
+          <span style={{ color: "#ffffff" }}>WE ARE </span>
+          <span style={{ color: "rgba(255, 221, 14, 0.95)" }}>BSVC</span>
         </h1>
+        <p
+          className="font-libre-franklin text-center mt-1 md:mt-2"
+          style={{
+            color: "#ffffff",
+            fontSize: "clamp(0.75rem, 1.6vw, 1.5rem)",
+            fontWeight: 500,
+            textShadow: "0 1px 8px rgba(0,0,0,0.25)",
+          }}
+        >
+          Bocconi Students for Venture Capital
+        </p>
       </div>
 
       {/* Breathing room before the next section */}
-      <div className="h-20 md:h-32" />
+      <div className="h-16 md:h-24" />
     </section>
   );
 }
