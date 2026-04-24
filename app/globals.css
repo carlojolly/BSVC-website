@@ -36,6 +36,14 @@
   font-weight: 800;
 }
 
+html {
+  background: #ffffff;
+}
+
+html.dark {
+  background: #18181b;
+}
+
 body {
   background: transparent;
   color: var(--foreground);

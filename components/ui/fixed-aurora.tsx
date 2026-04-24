@@ -4,7 +4,7 @@ export const FixedAurora = () => {
   return (
     <div
       aria-hidden
-      className="fixed inset-0 -z-10 pointer-events-none overflow-hidden bg-white dark:bg-zinc-900"
+      className="fixed inset-0 -z-10 pointer-events-none overflow-hidden"
     >
       <div
         className="
