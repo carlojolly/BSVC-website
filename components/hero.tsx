@@ -45,7 +45,7 @@ export function Hero() {
           <span style={{ color: "rgba(255, 221, 14, 0.95)" }}>BSVC.</span>
         </h1>
         <p
-          className="font-libre-franklin text-center mt-1 md:mt-2"
+          className="font-libre-franklin text-center mt-1 md:mt-2 font-light"
           style={{
             color: "#888994",
             fontSize: "clamp(0.75rem, 1.6vw, 1.5rem)",
