@@ -16,6 +16,8 @@ export function Hero() {
           priority
           sizes="100vw"
         />
+        {/* Gradient fade: transparent → white over the bottom ~40% of the image */}
+        <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-b from-transparent to-white" />
       </div>
 
       {/* Heading overlapping the bottom of the photo */}
