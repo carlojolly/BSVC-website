@@ -1,8 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export function Hero() {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY < 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <section className="relative w-full">
       {/* Full-width team photo, sitting beneath the aurora layer */}
@@ -48,6 +57,32 @@ export function Hero() {
 
       {/* Breathing room before the next section */}
       <div className="h-16 md:h-24" />
+
+      {/* Scroll indicator — fixed at viewport bottom, fades when user scrolls */}
+      <div
+        className="fixed bottom-7 inset-x-0 flex flex-col items-center gap-1 pointer-events-none transition-opacity duration-500"
+        style={{ opacity: visible ? 1 : 0 }}
+      >
+        <span
+          className="font-libre-franklin tracking-wide"
+          style={{ color: "#888994", fontSize: "clamp(0.65rem, 1vw, 0.85rem)", fontWeight: 300 }}
+        >
+          Discover More
+        </span>
+        <svg
+          className="animate-bounce"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#888994"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </div>
     </section>
   );
 }
