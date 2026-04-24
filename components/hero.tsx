@@ -1,28 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { GL } from "./gl";
 import { Pill } from "./pill";
+import { AuroraBackground } from "./ui/aurora-background";
 
 export function Hero() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const threshold = window.innerHeight * 0.3;
-      setScrolled(window.scrollY > threshold);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="flex flex-col h-svh">
-      <GL hovering={scrolled} />
-
-      <div className="flex-1 flex flex-col items-center justify-center pb-16 text-center relative">
+    <AuroraBackground className="h-svh">
+      <div className="flex-1 flex flex-col items-center justify-center pb-16 text-center relative w-full">
         <Pill className="mb-6">Applications Open</Pill>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-libre-franklin" style={{ fontWeight: 700 }}>
           Bocconi Students for <br />
@@ -32,6 +16,6 @@ export function Hero() {
           Creating a VC and startup ecosystem for Bocconi
         </p>
       </div>
-    </div>
+    </AuroraBackground>
   );
 }
