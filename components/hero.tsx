@@ -11,7 +11,7 @@ export function Hero() {
           src="/bsvc-team.jpg"
           alt="Bocconi Students for Venture Capital team"
           width={6000}
-          height={3375}
+          height={2821}
           className="w-full h-auto block"
           priority
           sizes="100vw"
