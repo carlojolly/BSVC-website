@@ -46,36 +46,8 @@ export function Hero() {
         </p>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="flex justify-center pt-8 pb-10 md:pb-14">
-        <div className="animate-bounce flex flex-col items-center gap-1 opacity-40 hover:opacity-70 transition-opacity">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#3c3c3b"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#3c3c3b"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="-mt-2"
-          >
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
-        </div>
-      </div>
+      {/* Breathing room before the next section */}
+      <div className="h-16 md:h-24" />
     </section>
   );
 }
