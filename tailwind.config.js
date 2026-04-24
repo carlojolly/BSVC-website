@@ -17,6 +17,7 @@ module.exports = {
         border: "var(--border)",
       },
       fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
         mono: "var(--font-geist-mono)",
         sentient: ["'Sentient'", "sans-serif"],
         "libre-franklin": "var(--font-libre-franklin)",

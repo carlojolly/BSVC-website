@@ -17,7 +17,7 @@ const libreF = Libre_Franklin({
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
