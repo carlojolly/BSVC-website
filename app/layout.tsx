@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 const libreF = Libre_Franklin({
   variable: "--font-libre-franklin",
   subsets: ["latin"],
-  weight: ["900"],
+  weight: ["200", "300", "500", "900"],
 });
 
 const inter = Inter({
