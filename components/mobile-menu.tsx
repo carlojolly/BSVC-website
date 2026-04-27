@@ -14,11 +14,11 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { name: "About us", href: "#about-us" },
-    { name: "Activities", href: "#activities" },
-    { name: "The Team", href: "#the-team" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Articles", href: "#articles" },
+    { name: "About us", href: "/#about-us" },
+    { name: "Activities", href: "/#activities" },
+    { name: "The Team", href: "/the-team" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Articles", href: "/#articles" },
   ];
 
   const handleLinkClick = () => {
