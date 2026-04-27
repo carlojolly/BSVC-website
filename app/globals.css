@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Disable browser scroll-anchoring globally so accordion-style sections that
+   grow/shrink the page (e.g. the Activities expandable rows) don't cause the
+   viewport to drift when the user opens an item near the bottom of the page. */
+html {
+  overflow-anchor: none;
+}
+
 @font-face {
   font-family: 'Sentient';
   src: url('/Sentient-Extralight.woff') format('woff');

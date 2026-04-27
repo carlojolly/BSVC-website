@@ -6,7 +6,13 @@ import { Logo } from "./logo";
 import { MobileMenu } from "./mobile-menu";
 import { Text_03 } from "./ui/wave-text";
 
-const NAV_ITEMS = ["About us", "Activities", "The Team", "Gallery", "Articles"];
+const NAV_ITEMS: { label: string; href: string }[] = [
+  { label: "About us", href: "/#about-us" },
+  { label: "Activities", href: "/#activities" },
+  { label: "The Team", href: "/the-team" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Articles", href: "/#articles" },
+];
 
 const BRAND_BLUE = "#3c3c3b";
 const SCROLL_START = 20;
@@ -46,8 +52,8 @@ export const Header = () => {
   const pillBorderAlpha = p * 0.15;
   const pillShadowAlpha = p * 0.20;
   const pillRadius = p * 9999;
-  const logoWidth = Math.round(100 - p * 20);
-  const logoWidthMd = Math.round(120 - p * 30);
+  const logoWidth = Math.round(100 - p * 8);
+  const logoWidthMd = Math.round(120 - p * 16);
 
   return (
     <div className="fixed z-50 top-0 left-0 w-full pointer-events-none">
@@ -118,11 +124,11 @@ export const Header = () => {
           <nav className="max-lg:hidden absolute left-1/2 -translate-x-1/2 flex items-center justify-center gap-x-6 md:gap-x-10">
             {NAV_ITEMS.map((item) => (
               <Link
-                key={item}
-                href={`#${item.toLowerCase().replace(" ", "-")}`}
+                key={item.label}
+                href={item.href}
                 className="uppercase font-mono text-sm whitespace-nowrap transition-colors duration-150 ease-out text-white/80 hover:text-white"
               >
-                <Text_03 text={item} />
+                <Text_03 text={item.label} />
               </Link>
             ))}
           </nav>

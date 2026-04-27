@@ -42,7 +42,7 @@ export function Hero() {
           }}
         >
           <span style={{ color: "#ffffff" }}>WE ARE </span>
-          <span style={{ color: "rgba(255, 221, 14, 0.95)" }}>BSVC.</span>
+          <span style={{ color: "rgba(255, 221, 14, 0.95)" }}>BSVC</span>
         </h1>
         <p
           className="font-libre-franklin text-center mt-1 md:mt-2 font-light"
