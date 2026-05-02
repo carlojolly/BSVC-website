@@ -6,35 +6,13 @@ import { ZoomParallax } from "@/components/ui/zoom-parallax";
 import { GalleryScroll } from "@/components/ui/gallery-scroll";
 import { Footer } from "@/components/footer";
 
-const GALLERY_FILES: { n: number; ext: string }[] = [
-  { n: 1, ext: "jpg" },
-  { n: 2, ext: "jpg" },
-  { n: 3, ext: "jpg" },
-  { n: 4, ext: "jpg" },
-  { n: 5, ext: "jpg" },
-  { n: 6, ext: "jpg" },
-  { n: 7, ext: "jpg" },
-  { n: 8, ext: "jpg" },
-  { n: 9, ext: "jpg" },
-  { n: 10, ext: "jpg" },
-  { n: 11, ext: "jpg" },
-  { n: 12, ext: "jpg" },
-  { n: 13, ext: "JPG" },
-  { n: 14, ext: "JPG" },
-  { n: 15, ext: "jpg" },
-  { n: 16, ext: "jpg" },
-  { n: 17, ext: "jpg" },
-  { n: 18, ext: "jpg" },
-  { n: 19, ext: "jpg" },
-  { n: 20, ext: "jpg" },
-  { n: 21, ext: "JPG" },
-  { n: 22, ext: "jpg" },
-];
-
-const images = GALLERY_FILES.map(({ n, ext }) => ({
-  src: `/gallery/image ${n}.${ext}`,
-  alt: `BSVC moment ${n}`,
-}));
+const images = Array.from({ length: 22 }, (_, i) => {
+  const n = i + 1;
+  return {
+    src: `/Gallery/image_${n}.jpg`,
+    alt: `BSVC moment ${n}`,
+  };
+});
 
 export default function GalleryPage() {
   useEffect(() => {

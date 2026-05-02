@@ -133,7 +133,7 @@ export function Team() {
                   alt={`${m.name}, ${m.role}`}
                   loading="lazy"
                   draggable={false}
-                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-out-expo group-hover:scale-[1.04]"
                 />
                 {/* darkening layer */}
                 <div
@@ -146,7 +146,7 @@ export function Team() {
                     p-5 md:p-6
                     opacity-0 translate-y-2
                     group-hover:opacity-100 group-hover:translate-y-0
-                    transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
+                    transition-all duration-500 ease-out-expo
                     pointer-events-none"
                 >
                   <p className="font-inter text-[12px] md:text-[13px] leading-[1.65] text-white">
