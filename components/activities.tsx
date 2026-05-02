@@ -56,7 +56,10 @@ const activities: Activity[] = [
     tagline:
       "Real conversations with the people building and funding the ecosystem.",
     body: "We host conversations with founders, investors, and inspiring individuals to go beyond theory and understand how things actually work in practice. These podcasts give direct access to real stories, lessons learned, and honest insights from people building and investing in the ecosystem.",
-    links: [{ label: "Listen on Spotify", href: "#" }],
+    links: [
+      { label: "BSVC on Spotify", href: "https://open.spotify.com/show/42PVtnXOzZsIT1px6eSUmD?si=5dcc3b13d9f94fb6" },
+      { label: "‘From Scratch’ by BSVC x Radio Bocconi", href: "https://open.spotify.com/episode/5qff6RHSMyom8OlQ6JZMDF?si=4c7b25dced3b4046" },
+    ],
   },
   {
     icon: Users,
@@ -72,8 +75,8 @@ const activities: Activity[] = [
       "Accessible writing on venture capital, startups, and emerging trends in tech.",
     body: "We regularly publish accessible articles covering venture capital, startups, and emerging trends in tech. Beyond sharing knowledge, this is a way for members to build strong opinions and contribute to the broader conversation around innovation.",
     links: [
-      { label: "Read on Medium", href: "#" },
-      { label: "Follow on LinkedIn", href: "#" },
+      { label: "Read on Medium", href: "https://medium.com/@as.bsventureclub" },
+      { label: "Follow on LinkedIn", href: "https://www.linkedin.com/company/bocconi-students-for-venture-capital/" },
     ],
   },
 ];
@@ -89,10 +92,25 @@ export function Activities() {
       className="relative overflow-hidden pt-32 md:pt-44 pb-16 md:pb-20"
     >
       {/* ── ambient backdrop ── */}
+      {/*
+        The two blurred glows below are very expensive for Safari to
+        re-rasterize every frame — and any layout change in this section
+        (e.g. the accordion expanding) was triggering exactly that, which is
+        why the dropdowns felt low-fps. Promoting each blur onto its own
+        compositor layer (translateZ + will-change: transform) means Safari
+        rasterizes them once and just composites the cached bitmap on every
+        frame, leaving the dropdown animation smooth.
+      */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
-        <div className="absolute -top-32 right-0 w-[700px] h-[700px] rounded-full bg-primary/[0.04] blur-[120px]" />
-        <div className="absolute bottom-0 -left-40 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[100px]" />
+        <div
+          className="absolute -top-32 right-0 w-[700px] h-[700px] rounded-full bg-primary/[0.04] blur-[120px]"
+          style={{ transform: "translate3d(0,0,0)", willChange: "transform" }}
+        />
+        <div
+          className="absolute bottom-0 -left-40 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[100px]"
+          style={{ transform: "translate3d(0,0,0)", willChange: "transform" }}
+        />
       </div>
 
       <div className="container relative max-w-5xl" ref={sectionRef}>
@@ -207,42 +225,48 @@ export function Activities() {
                         {a.tagline}
                       </p>
 
-                      <div
+                      <motion.div
                         id={`activity-panel-${i}`}
                         aria-hidden={!isOpen}
-                        className="grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none"
-                        style={{
-                          gridTemplateRows: isOpen ? "1fr" : "0fr",
+                        initial={false}
+                        animate={{
+                          height: isOpen ? "auto" : 0,
                           opacity: isOpen ? 1 : 0,
-                          overflowAnchor: "none",
+                        }}
+                        transition={{
+                          duration: 0.5,
+                          ease: EASE_OUT_EXPO,
+                          opacity: { duration: isOpen ? 0.4 : 0.25 },
+                        }}
+                        style={{
+                          overflow: "hidden",
+                          willChange: "height, opacity",
                         }}
                       >
-                        <div className="overflow-hidden min-h-0">
-                          <div className="pt-5 md:pt-6 max-w-3xl">
-                            <p className="font-inter text-[15px] md:text-[16px] text-foreground/70 leading-[1.7]">
-                              {a.body}
-                            </p>
-                            {a.links && a.links.length > 0 && (
-                              <div className="flex flex-wrap gap-x-6 gap-y-3 mt-6">
-                                {a.links.map((l) => (
-                                  <a
-                                    key={l.label}
-                                    href={l.href}
-                                    tabIndex={isOpen ? 0 : -1}
-                                    className="group/link inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.18em] text-primary hover:text-foreground transition-colors border-b border-primary/40 hover:border-foreground/60 pb-1"
-                                  >
-                                    {l.label}
-                                    <ArrowUpRight
-                                      size={14}
-                                      className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-                                    />
-                                  </a>
-                                ))}
-                              </div>
-                            )}
-                          </div>
+                        <div className="pt-5 md:pt-6 max-w-3xl">
+                          <p className="font-inter text-[15px] md:text-[16px] text-foreground/70 leading-[1.7]">
+                            {a.body}
+                          </p>
+                          {a.links && a.links.length > 0 && (
+                            <div className="flex flex-wrap gap-x-6 gap-y-3 mt-6">
+                              {a.links.map((l) => (
+                                <a
+                                  key={l.label}
+                                  href={l.href}
+                                  tabIndex={isOpen ? 0 : -1}
+                                  className="group/link inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.18em] text-primary hover:text-foreground transition-colors border-b border-primary/40 hover:border-foreground/60 pb-1"
+                                >
+                                  {l.label}
+                                  <ArrowUpRight
+                                    size={14}
+                                    className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                                  />
+                                </a>
+                              ))}
+                            </div>
+                          )}
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
 
                     {/* toggle indicator */}

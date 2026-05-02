@@ -74,7 +74,16 @@ export function PartnersMarquee() {
       >
         <div
           className="flex w-max items-center gap-14 md:gap-20 motion-reduce:animate-none"
-          style={{ animation: "partners-marquee 52s linear infinite" }}
+          style={{
+            animation: "partners-marquee 52s linear infinite",
+            // Promote the track to its own compositor layer so Safari keeps it
+            // painted while it animates horizontally (otherwise individual
+            // logos can flash empty as they cross sub-layer boundaries).
+            willChange: "transform",
+            transform: "translate3d(0, 0, 0)",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+          }}
         >
           {track.map((p, i) => (
             // eslint-disable-next-line @next/next/no-img-element
@@ -84,10 +93,17 @@ export function PartnersMarquee() {
               alt={i < partners.length ? p.name : ""}
               aria-hidden={i >= partners.length || undefined}
               draggable={false}
-              loading="lazy"
+              decoding="async"
               className="h-12 md:h-16 w-auto max-w-[200px] md:max-w-[260px] object-contain shrink-0
                 select-none opacity-55 hover:opacity-90 transition-opacity duration-300"
-              style={{ filter: "brightness(0)" }}
+              style={{
+                filter: "brightness(0)",
+                // Force each logo onto the GPU so Safari doesn't drop the
+                // raster mid-animation when the track is long.
+                transform: "translateZ(0)",
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+              }}
             />
           ))}
         </div>

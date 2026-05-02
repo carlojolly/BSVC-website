@@ -10,13 +10,13 @@ const NAV_LINKS = [
   { label: "Activities", href: "#activities" },
   { label: "The Team", href: "#the-team" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Articles", href: "#articles" },
+  { label: "Articles", href: "/articles" },
 ];
 
 const SOCIAL_LINKS = [
-  { icon: Mail, href: "mailto:bsvc@unibocconi.it", label: "Email" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: Mail, href: "mailto:as.bsventureclub@unibocconi.it", label: "Email" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/bocconi-students-for-venture-capital/", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/bsvc_bocconi", label: "Instagram" },
 ];
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;

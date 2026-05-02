@@ -60,7 +60,9 @@ export function CTA() {
                   <span className={`relative rounded-full h-2 w-2 ${applicationsOpen ? "bg-primary" : "bg-foreground/30"}`} />
                 </span>
                 <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.25em] text-foreground/75">
-                  {statusLabel}
+                  Applications open in{" "}
+                  <span className="text-primary">February</span> and{" "}
+                  <span className="text-primary">September</span>
                 </span>
               </div>
             </motion.div>
@@ -94,7 +96,9 @@ export function CTA() {
               transition={{ duration: 0.7, ease: EASE_OUT_EXPO, delay: 0.6 }}
             >
               <a
-                href="#"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScloisEKMdDtU0Pm_3MwVjJ00m0aFnqUskBCHNQxgyP5M5bQQ/closedform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2.5
                   font-mono text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.2em]
                   px-7 py-4 rounded-full bg-foreground text-white

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "./logo";
 import { MobileMenu } from "./mobile-menu";
@@ -11,7 +12,7 @@ const NAV_ITEMS: { label: string; href: string }[] = [
   { label: "Activities", href: "/#activities" },
   { label: "The Team", href: "/the-team" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Articles", href: "/#articles" },
+  { label: "Articles", href: "/articles" },
 ];
 
 const BRAND_BLUE = "#3c3c3b";
@@ -25,6 +26,50 @@ function easeInOut(t: number): number {
 export const Header = () => {
   const [progress, setProgress] = useState(0);
   const rafRef = useRef<number | null>(null);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Smoothly scroll to a hash target on the current page. Works for both
+  // same-page anchors (e.g. "/#about-us" while on "/") and cross-page links
+  // (navigates first, then scrolls smoothly once the target lands in view).
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    const hashIdx = href.indexOf("#");
+    if (hashIdx === -1) return; // non-anchor links keep default behaviour
+    const targetPath = href.slice(0, hashIdx) || "/";
+    const id = href.slice(hashIdx + 1);
+    if (!id) return;
+
+    if (pathname === targetPath) {
+      e.preventDefault();
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      else
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      // keep the URL in sync so refresh / share works
+      window.history.replaceState(null, "", `#${id}`);
+    } else {
+      // navigate to the page; the browser will jump to the hash. After the
+      // route lands, re-trigger a smooth scroll so the transition is animated
+      // rather than instant.
+      e.preventDefault();
+      router.push(href);
+      const tryScroll = (attempt = 0) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (attempt < 20) {
+          requestAnimationFrame(() => tryScroll(attempt + 1));
+        }
+      };
+      requestAnimationFrame(() => tryScroll());
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -126,6 +171,7 @@ export const Header = () => {
               <Link
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="uppercase font-mono text-sm whitespace-nowrap transition-colors duration-150 ease-out text-white/80 hover:text-white"
               >
                 <Text_03 text={item.label} />
@@ -134,12 +180,12 @@ export const Header = () => {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link
-              href="/#contact-us"
+            <a
+              href="mailto:as.bsventureclub@unibocconi.it"
               className="uppercase max-lg:hidden font-mono text-sm hover:text-primary/80 transition-colors duration-150 ease-out text-[#ffdd0ef2]"
             >
               Contact US
-            </Link>
+            </a>
             <MobileMenu />
           </div>
         </div>
