@@ -146,7 +146,7 @@ export default function ArticlesPage() {
                           alt=""
                           loading="lazy"
                           draggable={false}
-                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.04]"
                         />
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center text-foreground/30">

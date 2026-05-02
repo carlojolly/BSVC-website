@@ -42,6 +42,9 @@ module.exports = {
       animation: {
         aurora: "aurora 60s linear infinite",
       },
+      transitionTimingFunction: {
+        "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
+      },
       keyframes: {
         aurora: {
           from: {
