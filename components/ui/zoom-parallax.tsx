@@ -28,9 +28,14 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
 
   const scales = [scale4, scale5, scale6, scale5, scale6, scale8, scale9];
 
+  // Slight leftward offset to centre the collage; reduced to 0 as the centre
+  // image zooms in so it fully fills the viewport on the right edge.
+  const offsetX = useTransform(scrollYProgress, [0, 1], ["-3vw", "0vw"]);
+
   return (
     <div ref={container} className="relative h-[300vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
+        <motion.div className="relative h-full w-full" style={{ x: offsetX }}>
         {images.map(({ src, alt }, index) => {
           const scale = scales[index % scales.length];
 
@@ -60,7 +65,11 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
                   : ""
               } ${
                 index === 6
-                  ? "[&>div]:!top-[22.5vh] [&>div]:!left-[25vw] [&>div]:!h-[15vh] [&>div]:!w-[15vw]"
+                  ? "[&>div]:!top-[28vh] [&>div]:!left-[30vw] [&>div]:!h-[22vh] [&>div]:!w-[22vw]"
+                  : ""
+              } ${
+                index === 7
+                  ? "[&>div]:!-top-[26vh] [&>div]:!left-[33vw] [&>div]:!h-[22vh] [&>div]:!w-[18vw]"
                   : ""
               } `}
             >
@@ -75,6 +84,7 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
             </motion.div>
           );
         })}
+        </motion.div>
       </div>
     </div>
   );

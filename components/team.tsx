@@ -89,7 +89,7 @@ export function Team() {
         >
           <span className="h-px w-10 bg-primary" />
           <span className="font-mono text-primary text-xs uppercase tracking-[0.25em]">
-            Meet the team
+            The board
           </span>
         </motion.div>
 
@@ -99,9 +99,7 @@ export function Team() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: EASE_OUT_EXPO, delay: 0.05 }}
         >
-          The people
-          <br />
-          <span className="text-foreground/55">behind the work.</span>
+          Meet <span className="text-foreground/55">the team.</span>
         </motion.h2>
 
         {/* ── board grid ── */}
