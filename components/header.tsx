@@ -97,6 +97,9 @@ export const Header = () => {
   const pillBorderAlpha = p * 0.15;
   const pillShadowAlpha = p * 0.20;
   const pillRadius = p * 9999;
+  // Horizontal inset that grows with scroll so the pill becomes noticeably
+  // narrower in its "scrolled" state instead of spanning the full container.
+  const pillSideInset = p * 80;
   const logoWidth = Math.round(100 - p * 8);
   const logoWidthMd = Math.round(120 - p * 16);
 
@@ -137,18 +140,25 @@ export const Header = () => {
           style={{
             top: `${pillTopInset}px`,
             bottom: `${pillTopInset}px`,
-            left: 0,
-            right: 0,
+            left: `${pillSideInset}px`,
+            right: `${pillSideInset}px`,
             borderRadius: `${pillRadius}px`,
             backgroundColor: `rgba(60,60,59,${pillBgAlpha})`,
             border: `1px solid rgba(0,0,0,${pillBorderAlpha})`,
             boxShadow: `0 4px 32px rgba(60,60,59,${pillShadowAlpha})`,
-            willChange: "border-radius, background-color, top, bottom, box-shadow",
+            willChange: "border-radius, background-color, top, bottom, left, right, box-shadow",
           }}
         />
 
-        {/* Content row */}
-        <div className="relative flex items-center justify-between pt-5 pb-4 md:pt-6 md:pb-5">
+        {/* Content row — also insets horizontally as the pill narrows so the
+            logo / nav / contact link stay nicely inside the pill. */}
+        <div
+          className="relative flex items-center justify-between pt-5 pb-4 md:pt-6 md:pb-5"
+          style={{
+            paddingLeft: `${pillSideInset}px`,
+            paddingRight: `${pillSideInset}px`,
+          }}
+        >
 
           <Link href="/">
             {/* Wrapper drives width so Logo className can stay static */}
