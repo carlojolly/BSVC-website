@@ -27,9 +27,12 @@ html {
 
 :root {
   --background: #ffffff;
-  --foreground: #111111;
+  /* Sits between near-black (#111) and the navbar grey (#3c3c3b) — pops
+     enough to read confidently, soft enough that the navbar pill doesn't
+     clash when it overlays body copy. */
+  --foreground: #262626;
   --primary: #FFC700;
-  --primary-foreground: #111111;
+  --primary-foreground: #262626;
   --border: #d0d0d0;
 }
 
