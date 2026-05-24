@@ -99,7 +99,7 @@ export const Header = () => {
   const pillRadius = p * 9999;
   // Horizontal inset that grows with scroll so the pill becomes noticeably
   // narrower in its "scrolled" state instead of spanning the full container.
-  const pillSideInset = p * 80;
+  const pillSideInset = p * 140;
   const logoWidth = Math.round(100 - p * 8);
   const logoWidthMd = Math.round(120 - p * 16);
 
