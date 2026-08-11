@@ -15,7 +15,17 @@ const NAV_ITEMS: { label: string; href: string }[] = [
   { label: "Articles", href: "/articles" },
 ];
 
-const BRAND_BLUE = "#3c3c3b";
+const GRADIENT_RGB = (a: number) => `rgba(60,60,59,${a})`;
+const BLUR_MASK = `linear-gradient(to bottom,
+  rgba(0,0,0,1) 0%,
+  rgba(0,0,0,1) 32%,
+  rgba(0,0,0,0.88) 46%,
+  rgba(0,0,0,0.70) 57%,
+  rgba(0,0,0,0.48) 67%,
+  rgba(0,0,0,0.28) 76%,
+  rgba(0,0,0,0.13) 85%,
+  rgba(0,0,0,0.04) 92%,
+  rgba(0,0,0,0) 98%)`;
 const SCROLL_START = 20;
 const SCROLL_END = 110;
 
@@ -100,8 +110,8 @@ export const Header = () => {
   // Horizontal inset that grows with scroll so the pill becomes noticeably
   // narrower in its "scrolled" state instead of spanning the full container.
   const pillSideInset = p * 140;
-  const logoWidth = Math.round(100 - p * 8);
-  const logoWidthMd = Math.round(120 - p * 16);
+  const logoWidth = Math.round(120 - p * 10);
+  const logoWidthMd = Math.round(144 - p * 18);
 
   return (
     <div className="fixed z-50 top-0 left-0 w-full pointer-events-none">
@@ -111,7 +121,7 @@ export const Header = () => {
         aria-hidden
         className="absolute inset-x-0 top-0 pointer-events-none"
         style={{
-          height: "90px",
+          height: "150px",
           opacity: gradientOpacity,
           willChange: "opacity",
         }}
@@ -119,14 +129,31 @@ export const Header = () => {
         <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(to bottom, rgba(60,60,59,0.96) 0%, ${BRAND_BLUE} 35%, rgba(255,255,255,0) 100%)`,
+            // Fades to a fully transparent *brand grey* rather than transparent
+            // white: interpolating toward white lightens the midtones and leaves
+            // a visible shelf over pale page backgrounds. The many stops trace an
+            // ease-out alpha curve so the tail dies away instead of stopping on a
+            // straight line — the seam that showed on the light-background pages.
+            background: `linear-gradient(to bottom,
+              ${GRADIENT_RGB(0.97)} 0%,
+              ${GRADIENT_RGB(0.95)} 32%,
+              ${GRADIENT_RGB(0.87)} 46%,
+              ${GRADIENT_RGB(0.74)} 56%,
+              ${GRADIENT_RGB(0.57)} 65%,
+              ${GRADIENT_RGB(0.40)} 73%,
+              ${GRADIENT_RGB(0.25)} 81%,
+              ${GRADIENT_RGB(0.13)} 88%,
+              ${GRADIENT_RGB(0.05)} 94%,
+              ${GRADIENT_RGB(0)} 100%)`,
           }}
         />
         <div
           className="absolute inset-0 backdrop-blur-md"
           style={{
-            WebkitMaskImage: "linear-gradient(to bottom, black 35%, transparent 100%)",
-            maskImage: "linear-gradient(to bottom, black 35%, transparent 100%)",
+            // Matching eased falloff, ended a little earlier than the colour
+            // ramp so the blur boundary is already invisible before it stops.
+            WebkitMaskImage: BLUR_MASK,
+            maskImage: BLUR_MASK,
           }}
         />
       </div>
@@ -153,7 +180,7 @@ export const Header = () => {
         {/* Content row — also insets horizontally as the pill narrows so the
             logo / nav / contact link stay nicely inside the pill. */}
         <div
-          className="relative flex items-center justify-between pt-5 pb-4 md:pt-6 md:pb-5"
+          className="relative flex items-center justify-between pt-4 pb-3 md:pt-5 md:pb-4"
           style={{
             paddingLeft: `${pillSideInset}px`,
             paddingRight: `${pillSideInset}px`,
