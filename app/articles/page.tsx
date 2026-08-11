@@ -55,7 +55,7 @@ export default function ArticlesPage() {
     <main className="min-h-screen w-full">
       <div className="h-20 md:h-24" />
 
-      <section className="relative pt-16 md:pt-24 pb-24 md:pb-32 overflow-hidden">
+      <section className="relative pt-10 md:pt-16 pb-24 md:pb-32 overflow-hidden">
         <div className="container relative">
           <div className="max-w-5xl mx-auto">
             <motion.div

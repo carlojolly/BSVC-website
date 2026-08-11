@@ -76,7 +76,7 @@ export function Team() {
   return (
     <section
       id="the-team"
-      className="relative pt-24 md:pt-32 pb-24 md:pb-32 overflow-hidden"
+      className="relative pt-16 md:pt-24 pb-24 md:pb-32 overflow-hidden"
     >
       <div className="container relative" ref={sectionRef}>
         <div className="max-w-4xl mx-auto">
