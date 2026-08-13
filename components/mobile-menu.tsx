@@ -5,7 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface MobileMenuProps {
   className?: string;
@@ -28,6 +28,22 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
   const handleLinkClick = () => {
     setIsOpen(false);
   };
+
+  // Lock the page behind the sheet. Without this the body keeps scrolling
+  // under the open menu (the dialog is `modal={false}`, so Radix does not do
+  // it for us), which is the main reason dragging over the menu felt loose.
+  useEffect(() => {
+    if (!isOpen) return;
+    const { overflow, paddingRight } = document.body.style;
+    // Compensate for the scrollbar so hiding it does not shift the layout.
+    const barWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = "hidden";
+    if (barWidth > 0) document.body.style.paddingRight = `${barWidth}px`;
+    return () => {
+      document.body.style.overflow = overflow;
+      document.body.style.paddingRight = paddingRight;
+    };
+  }, [isOpen]);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -71,20 +87,29 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
             "group lg:hidden p-2 text-white transition-colors",
             className
           )}
-          aria-label="Open menu"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           <Menu className="group-[[data-state=open]]:hidden" size={24} />
           <X className="hidden group-[[data-state=open]]:block" size={24} />
         </button>
       </Dialog.Trigger>
 
-      <Dialog.Portal>
+      {/* `forceMount` keeps the sheet in the DOM so open *and* close can be
+          driven by CSS transitions. Radix's own presence handling only defers
+          unmount for CSS animations, which would rule out the per-item
+          transition-delay stagger below. */}
+      <Dialog.Portal forceMount>
         <div
           data-overlay="true"
-          className="fixed z-30 inset-0 bg-black/10 backdrop-blur-sm"
+          className={cn(
+            "fixed z-30 inset-0 bg-black/20 backdrop-blur-sm",
+            "transition-opacity duration-300 ease-out-expo",
+            isOpen ? "opacity-100" : "opacity-0 pointer-events-none",
+          )}
         />
 
         <Dialog.Content
+          forceMount
           onInteractOutside={(e) => {
             if (
               e.target instanceof HTMLElement &&
@@ -93,12 +118,23 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
               e.preventDefault();
             }
           }}
-          className="fixed top-0 left-0 w-full z-40 py-28 md:py-40 bg-white/95 backdrop-blur-xl"
+          className={cn(
+            "fixed top-0 left-0 w-full z-40 py-28 md:py-40",
+            // Only one backdrop-filter layer now (the overlay keeps the other).
+            // Two stacked blurs were being recomposited every frame, which is
+            // what made the open/close feel heavy on a phone.
+            "bg-white/[0.97] rounded-b-[28px]",
+            "shadow-[0_24px_60px_-28px_rgba(0,0,0,0.35)]",
+            "transition-all duration-300 ease-out-expo motion-reduce:transition-none",
+            isOpen
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-3 pointer-events-none invisible",
+          )}
         >
           <Dialog.Title className="sr-only">Menu</Dialog.Title>
 
           <nav className="flex flex-col space-y-6 container mx-auto">
-            {menuItems.map((item) => (
+            {menuItems.map((item, i) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -106,7 +142,15 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
                   if (item.href.includes("#")) handleNavClick(e, item.href);
                   else handleLinkClick();
                 }}
-                className="text-xl font-mono uppercase text-foreground/60 transition-colors ease-out duration-150 hover:text-foreground/100 py-2"
+                // Cascade the items in behind the sheet; on close they all
+                // leave together so dismissing still feels immediate.
+                style={{ transitionDelay: isOpen ? `${90 + i * 45}ms` : "0ms" }}
+                className={cn(
+                  "text-xl font-mono uppercase py-2",
+                  "text-foreground/60 hover:text-foreground active:text-foreground",
+                  "transition-all duration-300 ease-out-expo motion-reduce:transition-none",
+                  isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2",
+                )}
               >
                 {item.name}
               </Link>
@@ -116,7 +160,17 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
               <a
                 href="mailto:as.bsventureclub@unibocconi.it"
                 onClick={handleLinkClick}
-                className="inline-block text-xl font-mono uppercase text-primary transition-colors ease-out duration-150 hover:text-primary/80 py-2"
+                style={{
+                  transitionDelay: isOpen
+                    ? `${90 + menuItems.length * 45}ms`
+                    : "0ms",
+                }}
+                className={cn(
+                  "inline-block text-xl font-mono uppercase py-2",
+                  "text-primary hover:text-primary/80 active:text-primary/80",
+                  "transition-all duration-300 ease-out-expo motion-reduce:transition-none",
+                  isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2",
+                )}
               >
                 Contact US
               </a>
