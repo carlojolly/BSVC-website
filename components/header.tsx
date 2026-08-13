@@ -29,12 +29,23 @@ const BLUR_MASK = `linear-gradient(to bottom,
 const SCROLL_START = 20;
 const SCROLL_END = 110;
 
+// How far the scrolled-state pill pulls in from each side of the container.
+// 140px is tuned for the desktop container; applied to a ~375px phone it would
+// consume 280px and leave a 95px pill with the logo and menu button spilling
+// outside it, so phones get a token inset instead.
+const PILL_INSET_DESKTOP = 140;
+const PILL_INSET_MOBILE = 10;
+
 function easeInOut(t: number): number {
   return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 }
 
 export const Header = () => {
   const [progress, setProgress] = useState(0);
+  // Starts at the desktop value so SSR and the first client render agree; the
+  // effect below corrects it on phones. Harmless either way, since the pill is
+  // fully collapsed (progress 0, inset 0) until the user scrolls.
+  const [maxPillInset, setMaxPillInset] = useState(PILL_INSET_DESKTOP);
   const rafRef = useRef<number | null>(null);
   const router = useRouter();
   const pathname = usePathname();
@@ -82,6 +93,15 @@ export const Header = () => {
   };
 
   useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const apply = () =>
+      setMaxPillInset(mq.matches ? PILL_INSET_DESKTOP : PILL_INSET_MOBILE);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
+  useEffect(() => {
     const onScroll = () => {
       if (rafRef.current !== null) return;
       rafRef.current = requestAnimationFrame(() => {
@@ -109,7 +129,7 @@ export const Header = () => {
   const pillRadius = p * 9999;
   // Horizontal inset that grows with scroll so the pill becomes noticeably
   // narrower in its "scrolled" state instead of spanning the full container.
-  const pillSideInset = p * 140;
+  const pillSideInset = p * maxPillInset;
   const logoWidth = Math.round(120 - p * 10);
   const logoWidthMd = Math.round(144 - p * 18);
 
