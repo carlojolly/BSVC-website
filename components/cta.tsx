@@ -96,7 +96,7 @@ export function CTA() {
               transition={{ duration: 0.7, ease: EASE_OUT_EXPO, delay: 0.6 }}
             >
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLScloisEKMdDtU0Pm_3MwVjJ00m0aFnqUskBCHNQxgyP5M5bQQ/closedform"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeSwsB9ukuO45hb5yk-sK-9ZWYZYEyEWk6t6yC0k8m9Fs1g9w/viewform?usp=publish-editor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2.5

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Libre_Franklin, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
@@ -24,6 +24,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "BSVC — Bocconi Students for Venture Capital",
   description: "Creating a VC and startup ecosystem for Bocconi",
+};
+
+// Must live on `viewport`, not `metadata` — Next 15 warns if themeColor is set
+// on the latter. Matches the dark navbar, which is what sits under the mobile
+// browser's address bar.
+export const viewport: Viewport = {
+  themeColor: "#262626",
 };
 
 export default function RootLayout({
